@@ -1,90 +1,167 @@
-// src/components/careers/JobForm.jsx
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const JobForm = () => {
+const JobApplicationForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
-    jobPosition: '',
-    resume: ''
+    phone: '',
+    position: '',
+    yearsOfExperience: '',
+    recentEducation: '',
+    resume: null,
+    coverLetter: '',
   });
 
+  const [status, setStatus] = useState('');
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, resume: e.target.files[0] });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Application submitted!');
-    // Here you would typically send the form data to a backend
+    setStatus('Sending...');
+
+    const formDataToSend = new FormData();
+    Object.keys(formData).forEach((key) => {
+      if (key === 'resume') {
+        formDataToSend.append(key, formData[key]);
+      } else {
+        formDataToSend.append(key, formData[key]);
+      }
+    });
+
+    try {
+      const response = await fetch('http://localhost:8081/api/job-application', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        setStatus('✅ Application submitted successfully!');
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          position: '',
+          yearsOfExperience: '',
+          recentEducation: '',
+          resume: null,
+          coverLetter: '',
+        });
+      } else {
+        setStatus('❌ Failed to submit application. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error while submitting application:', error);
+      setStatus('❌ Something went wrong. Please check your connection.');
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="name" className="block text-gray-700">Full Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full p-3 border border-gray-300 rounded-md"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="email" className="block text-gray-700">Email Address</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full p-3 border border-gray-300 rounded-md"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="jobPosition" className="block text-gray-700">Job Position</label>
-        <select
-          id="jobPosition"
-          name="jobPosition"
-          value={formData.jobPosition}
-          onChange={handleChange}
-          required
-          className="w-full p-3 border border-gray-300 rounded-md"
-        >
-          <option value="">Select Position</option>
-          <option value="Software Engineer">Software Engineer</option>
-          <option value="Product Manager">Product Manager</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="resume" className="block text-gray-700">Resume (PDF)</label>
-        <input
-          type="file"
-          id="resume"
-          name="resume"
-          accept="application/pdf"
-          onChange={handleChange}
-          required
-          className="w-full p-3 border border-gray-300 rounded-md"
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="w-full bg-blue-600 text-white p-3 rounded-md"
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-700 via-purple-700 to-pink-800 text-white p-8">
+      <motion.div
+        className="max-w-lg mx-auto bg-white text-gray-800 rounded-lg shadow-xl p-8"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
       >
-        Submit Application
-      </button>
-    </form>
+        <h1 className="text-3xl font-bold text-center mb-6">Job Application</h1>
+        
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Full Name"
+            required
+            value={formData.fullName}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <input
+            type="text"
+            name="position"
+            placeholder="Position Applying For"
+            required
+            value={formData.position}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <input
+            type="text"
+            name="yearsOfExperience"
+            placeholder="Years of Experience"
+            value={formData.yearsOfExperience}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <input
+            type="text"
+            name="recentEducation"
+            placeholder="Recent Education"
+            value={formData.recentEducation}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <input
+            type="file"
+            name="resume"
+            onChange={handleFileChange}
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          />
+          <textarea
+            name="coverLetter"
+            placeholder="Cover Letter"
+            required
+            rows="4"
+            value={formData.coverLetter}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:scale-105 transition-transform"
+          >
+            Submit Application
+          </button>
+        </form>
+
+        {status && (
+          <motion.p
+            className="text-center mt-4 text-sm font-medium"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            {status}
+          </motion.p>
+        )}
+      </motion.div>
+    </div>
   );
 };
 
-export default JobForm;
+export default JobApplicationForm;

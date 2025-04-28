@@ -9,6 +9,9 @@ import Portfolio from './pages/Portfolio';
 import Sectors from './pages/Sectors';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers/Careers';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard'; // <-- added this
+import ProtectedRoute from './components/ProtectedRoute'; // Make sure the path is correct
 import Developer from "./pages/Cards/Developer"; 
 import Cloud from "./pages/Cards/Cloud"; 
 import ScrollToTopButton from './pages/Toparrow';
@@ -29,6 +32,17 @@ function App() {
           <Route path="/sectors" element={<Sectors />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          
+          {/* Protect Admin Dashboard */}
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/developer" element={<Developer />} />
           <Route path="/Cloud" element={<Cloud />} />
           <Route path="/ScrollToTopButton" element={<ScrollToTopButton />} />
