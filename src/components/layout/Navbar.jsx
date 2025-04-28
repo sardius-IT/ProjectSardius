@@ -19,9 +19,9 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-white font-medium">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to="/about">Who we are</Link></li>
           <li><Link to="/portfolio">Portfolio</Link></li>
-          <li><Link to="/sectors">Sectors</Link></li>
+          <li><Link to="/sectors" >What we think</Link></li>
           <li><Link to="/careers">Careers</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li>

@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -11,13 +12,19 @@ import Careers from './pages/Careers/Careers';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard'; // <-- added this
 import ProtectedRoute from './components/ProtectedRoute'; // Make sure the path is correct
+import Developer from "./pages/Cards/Developer"; 
+import Cloud from "./pages/Cards/Cloud"; 
+import ScrollToTopButton from './pages/Toparrow';
+import ConnectPage from './pages/Cards/ConnectPage';
 
 function App() {
   return (
     <>
+      {/* Navbar sits on top */}
       <Navbar />
 
-      <main className="pt-24 min-h-screen bg-gray-950 text-white">
+      {/* Main content starts below navbar */}
+      <main className="pt-24  bg-gray-950 text-white flex flex-col">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -36,6 +43,12 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/developer" element={<Developer />} />
+          <Route path="/Cloud" element={<Cloud />} />
+          <Route path="/ScrollToTopButton" element={<ScrollToTopButton />} />
+          <Route path="/ConnectPage" element={<ConnectPage />} />
+
+
         </Routes>
       </main>
     </>
