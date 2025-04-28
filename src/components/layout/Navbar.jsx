@@ -24,6 +24,10 @@ const Navbar = () => {
           <li><Link to="/sectors">Sectors</Link></li>
           <li><Link to="/careers">Careers</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+          <li>
+          <Link to="/admin-login">Admin Login</Link>
+        </li>
+         
         </ul>
 
         {/* Mobile Toggle Button */}
