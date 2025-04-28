@@ -12,7 +12,7 @@ const Careers = () => {
       <p className="text-gray-700 mb-12">
         We're always looking for talented people to join our team. Explore our job openings below and apply now.
       </p>
-      <hi className="text-4xl font-bold text-blue-600 mb-6 ">hii</hi>
+    
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
        
       </div>

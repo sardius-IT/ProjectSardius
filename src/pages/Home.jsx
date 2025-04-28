@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Video from "../assets/Sardius IT.mp4";
+import CardsPage from "../pages/Cards/Cards";
 
+// Slide data
 const slides = [
   {
     title: "Innovate, Elevate",
@@ -17,6 +19,21 @@ const slides = [
   },
 ];
 
+// Variants for single letter animation
+const letterVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 const Home = () => {
   const [index, setIndex] = useState(0);
 
@@ -24,30 +41,23 @@ const Home = () => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, []);
 
-  // Function to animate the text letter by letter
+  // Function to animate text letter-by-letter
   const animateText = (text) => {
     return (
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1.5,
-          delay: 0.5,
-        }}
+        className="flex justify-center flex-wrap"
+        initial="initial"
+        animate="animate"
       >
-        {text.split("").map((char, index) => (
+        {text.split("").map((char, idx) => (
           <motion.span
-            key={index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              delay: index * 0.05, // Delay for each letter
-              duration: 0.3,
-            }}
+            key={idx}
+            variants={letterVariants}
+            transition={{ delay: idx * 0.05 }}
+            className="inline-block"
           >
             {char}
           </motion.span>
@@ -57,25 +67,38 @@ const Home = () => {
   };
 
   return (
-    <div className="w-screen h-screen overflow-hidden">
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src={Video}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+    <>
+      {/* Hero Section */}
+      <div className="relative w-full h-screen overflow-hidden">
+        {/* Background video */}
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          src={Video}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
 
-      <div className="relative z-10 flex flex-col items-start justify-center h-full w-full bg-black/50 text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-blue-200">
-          {animateText(slides[index].title)}
-        </h1>
-        <p className="mt-4 text-lg md:text-2xl text-gray-200">
-          {animateText(slides[index].subtitle)}
-        </p>
+        {/* Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
+
+        {/* Content */}
+        <div className="relative z-20 flex flex-col items-start justify-center text-center h-full px-4">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-blue-200 mb-4">
+            {animateText(slides[index].title)}
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300">
+            {animateText(slides[index].subtitle)}
+          </p>
+        </div>
       </div>
-    </div>
+
+      {/* Cards Section */}
+      <section className="">
+        <CardsPage />
+      </section>
+    </>
   );
 };
 
