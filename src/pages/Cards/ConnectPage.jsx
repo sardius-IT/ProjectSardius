@@ -12,7 +12,7 @@ const ConnectPage = () => {
     { 
       icon: faAt, 
       text: 'Connect with us', 
-      link: "/careers", 
+      link: "/contact", 
     },
     { 
       icon: faCompass, 

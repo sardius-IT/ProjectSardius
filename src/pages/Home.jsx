@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Video from "../assets/Sardius IT.mp4";
 import CardsPage from "../pages/Cards/Cards";
+import TeamCategories from "../pages/Team/Teamcategories";
 
 // Slide data
 const slides = [
@@ -93,7 +94,10 @@ const Home = () => {
           </p>
         </div>
       </div>
-
+      {/* TeamCategories Section */}
+      <section className="">
+        <TeamCategories />
+      </section>
       {/* Cards Section */}
       <section className="">
         <CardsPage />
