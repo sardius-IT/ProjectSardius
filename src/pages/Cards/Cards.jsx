@@ -244,9 +244,9 @@ const CardsPage = () => {
                 )}
                 <Link
                 to={card.link}
-                className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-2xl hover:bg-blue-600 transition"
+                className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-2xl hover:bg-blue-600 transition uppercase"
               >
-                Explore
+         Know More
               </Link>
               </motion.div>
             )}
@@ -272,3 +272,4 @@ const CardsPage = () => {
 };
 
 export default CardsPage;
+

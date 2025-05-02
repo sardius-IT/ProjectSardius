@@ -50,7 +50,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/admin-login" element={<AdminLogin />} />
-
           {/* Protect Admin Dashboard */}
           <Route
             path="/admin"
