@@ -16,7 +16,7 @@ import Developer from "./pages/Cards/Developer";
 import Cloud from "./pages/Cards/Cloud"; 
 import ScrollToTopButton from './pages/Toparrow';
 import ConnectPage from './pages/Cards/ConnectPage';
-
+import ApplicationForm from './pages/ApplicationForm';
 function App() {
   return (
     <>
@@ -33,7 +33,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/admin-login" element={<AdminLogin />} />
-          
+          <Route path="/apply" element={<ApplicationForm />} />
           {/* Protect Admin Dashboard */}
           <Route
             path="/admin"
