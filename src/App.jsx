@@ -3,6 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
@@ -27,19 +28,23 @@ import Itteam from "./pages/Team/Itteam";
 import HireOptions from "./pages/Team/Hireoptions"
 import Demand from "./pages/Team/Demand";
 import Whychoosetoptal from "./pages/Team/Whychoosetoptal";
-import Clientsatisfaction from "./pages/Team/Clientsatisfaction"
-import Dmteam from"./pages/Team/Dmteam"
-import Projectmanagerteam from "./pages/Team/Projectmanagerteam"
-import ManagementConsultants from "./pages/Team/ManagementConsultants"
-import ProductManagers from "./pages/Team/ProductManagers"
+import Clientsatisfaction from "./pages/Team/Clientsatisfaction";
+import Dmteam from"./pages/Team/Dmteam";
+import Projectmanagerteam from "./pages/Team/Projectmanagerteam";
+import ManagementConsultants from "./pages/Team/ManagementConsultants";
+import ProductManagers from "./pages/Team/ProductManagers";
 import { Import } from "lucide-react";
-import ITStaffing from"./pages/Team/ITStaffing" 
+import ITStaffing from"./pages/Team/ITStaffing"; 
+import StrategySection from "././pages/About/StrategySection";
+import StatsSection from "./pages/About/StatsSection";
+import Splitbanner from "./pages/About/Splitbanner";
+import TeamMembers from"./pages/TeamMembers"
 function App() {
   return (
     <>
       {/* Navbar sits on top */}
       <Navbar />
-
+      
       {/* Main content starts below navbar */}
       <main className="pt-24  bg-gray-950 text-white flex flex-col">
         <Routes>
@@ -83,10 +88,14 @@ function App() {
           <Route path="/ManagementConsultants" element={<ManagementConsultants/>} />
           <Route path="/ProductManagers" element={<ProductManagers/>} />
           <Route path="/ITStaffing" element={<ITStaffing/>} />
-        
+          <Route path="/StrategySection" element={<StrategySection/>} />
+          <Route path="/StatsSection.jsx" element={<StatsSection/>} />
+          <Route path="/Splitbanner" element={<Splitbanner/>} />
+          <Route path="/TeamMembers" element={<TeamMembers/>} />
         </Routes>
 
       </main>
+      <Footer/>
     </>
   );
 }
