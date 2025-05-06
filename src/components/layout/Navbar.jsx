@@ -9,7 +9,7 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className="absolute top-0 left-0 w-full bg-gray-950/30 backdrop-blur-md z-20 shadow-md border-b border-white/">
+    <nav className="absolute top-0 left-0 w-full bg-gray-950/40 backdrop-blur-md z-20 shadow-md border-b border-white/">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-start">

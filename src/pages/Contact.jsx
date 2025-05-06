@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import ConnectPage from ".././pages/Cards/ConnectPage";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      if (response.ok) {    
         setStatus('✅ Message sent successfully!');
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       } else {
@@ -42,10 +43,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-pink-800 text-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from from-black via-black to-bg-black text-white">
 
       {/* Top Heading Section */}
-      <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 p-16 text-center">
+      <div className="bg-gradient-to-r from-gray-500 via-black-500 to-black-500 p-16 text-center shadow-xl">
         <motion.h1
           className="text-5xl font-bold tracking-wide"
           initial={{ opacity: 0, y: -50 }}
@@ -57,49 +58,39 @@ const ContactForm = () => {
         <p className="mt-4 text-lg text-white/80">We are here to help you grow and succeed!</p>
       </div>
 
-      {/* About Company - Top */}
-      <motion.div
-        className="py-12 px-6 text-center max-w-5xl mx-auto"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        
-      </motion.div>
-
-      {/* Contact Form */}
+      {/* Contact Section */}
       <div className="flex flex-col md:flex-row p-10 gap-10">
-        {/* Left Side - Office Info + Map */}
-        <motion.div 
-          className="md:w-1/2 flex flex-col gap-6"
+        {/* Left - Info + Map */}
+        <motion.div
+          className="md:w-1/2 flex flex-col gap-6 bg-white text-gray-800 rounded-3xl shadow-2xl p-6"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold mb-2">Our Office</h2>
-          <p className="text-lg">
-            Sardius IT Technologies Pvt. Ltd.<br/>
-            2nd Floor, XYZ Building, Hyderabad, India.<br/>
-            Phone: +91 9876543210<br/>
-            Email: info@sardiustech.com
-          </p>
+          <div>
+            <h2 className="text-2xl font-semibold mb-2 text-emerald-950">Sardius IT Technologies</h2>
 
-          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <p className="mb-2"><strong>📍 Address:</strong>  Silicon Park, Plot No.23-24,  4thFloor,VIPHills,Madhapur,Hyderabad,500081.</p>
+
+            <p className="mb-2"><strong>📧 Email:</strong> info@sardius.co.in</p>
+
+            <p className="mb-4"><strong>📞 Phone:</strong> +91 98765 43210</p>
+          </div>
+
+          <div className="overflow-hidden rounded-xl border-2 border-purple-300 shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1400186369764!2d78.3860447!3d17.4512169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91007a623423%3A0x6f759591de4fa10d!2sSardius%20IT%20Technology!5e0!3m2!1sen!2sin!4v1681290990000!5m2!1sen!2sin"
+              title="Company Location"
+              src="https://www.google.com/search?q=sardius+it+technologies&sca_esv=62f82ff636d943ce&sxsrf=AHTn8zqs8VZb3I6hEVarXJhcq90JVOy1iQ%3A1746531035428&ei=2_IZaIb2Gf2cvr0PpYyEkAs&ved=0ahUKEwjGz9KP346NAxV9jq8BHSUGAbIQ4dUDCBA&uact=5&oq=sardius+it+technologies&gs_lp=Egxnd3Mtd2l6LXNlcnAiF3NhcmRpdXMgaXQgdGVjaG5vbG9naWVzMgUQABiABDICECYyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgUQABjvBTIIEAAYogQYiQUyCBAAGKIEGIkFMgUQABjvBUjmPVCPF1j5NXAEeACQAQCYAb4CoAHCDKoBBzAuMS4zLjK4AQPIAQD4AQGYAgigAt8IwgIIEAAYgAQYsAPCAgcQABiwAxgewgIOEAAYgAQYsAMYhgMYigXCAggQABiwAxjvBcICCxAAGLADGKIEGIkFwgIHEAAYgAQYDcICBhAAGA0YHpgDAIgGAZAGCpIHBzQuMC4yLjKgB-kusgcFMi0yLjK4B8EI&sclient=gws-wiz-serp&lqi=ChdzYXJkaXVzIGl0IHRlY2hub2xvZ2llc1oZIhdzYXJkaXVzIGl0IHRlY2hub2xvZ2llc5IBHWNvbXB1dGVyX3N1cHBvcnRfYW5kX3NlcnZpY2VzqgFcCggvbS8wN2MxdhABKhAiDHRlY2hub2xvZ2llcygAMh8QASIb2iQPUmLyGCHuLj0ptAV0wbh_MjpQ0s74xNpcMhsQAiIXc2FyZGl1cyBpdCB0ZWNobm9sb2dpZXM#rlimm=8031489964217704717https://www.google.com/search?q=sardius+it+technologies&sca_esv=62f82ff636d943ce&sxsrf=AHTn8zqs8VZb3I6hEVarXJhcq90JVOy1iQ%3A1746531035428&ei=2_IZaIb2Gf2cvr0PpYyEkAs&ved=0ahUKEwjGz9KP346NAxV9jq8BHSUGAbIQ4dUDCBA&uact=5&oq=sardius+it+technologies&gs_lp=Egxnd3Mtd2l6LXNlcnAiF3NhcmRpdXMgaXQgdGVjaG5vbG9naWVzMgUQABiABDICECYyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgUQABjvBTIIEAAYogQYiQUyCBAAGKIEGIkFMgUQABjvBUjmPVCPF1j5NXAEeACQAQCYAb4CoAHCDKoBBzAuMS4zLjK4AQPIAQD4AQGYAgigAt8IwgIIEAAYgAQYsAPCAgcQABiwAxgewgIOEAAYgAQYsAMYhgMYigXCAggQABiwAxjvBcICCxAAGLADGKIEGIkFwgIHEAAYgAQYDcICBhAAGA0YHpgDAIgGAZAGCpIHBzQuMC4yLjKgB-kusgcFMi0yLjK4B8EI&sclient=gws-wiz-serp&lqi=ChdzYXJkaXVzIGl0IHRlY2hub2xvZ2llc1oZIhdzYXJkaXVzIGl0IHRlY2hub2xvZ2llc5IBHWNvbXB1dGVyX3N1cHBvcnRfYW5kX3NlcnZpY2VzqgFcCggvbS8wN2MxdhABKhAiDHRlY2hub2xvZ2llcygAMh8QASIb2iQPUmLyGCHuLj0ptAV0wbh_MjpQ0s74xNpcMhsQAiIXc2FyZGl1cyBpdCB0ZWNobm9sb2dpZXM#rlimm=8031489964217704717"
               width="100%"
-              height="300"
+              height="260"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Company Location"
-              className="filter grayscale contrast-125"
             ></iframe>
           </div>
         </motion.div>
 
-        {/* Right Side - Form */}
+        {/* Right - Contact Form */}
         <motion.div 
           className="md:w-1/2 bg-white text-gray-800 rounded-3xl shadow-2xl p-8"
           initial={{ opacity: 0, x: 50 }}
@@ -159,40 +150,45 @@ const ContactForm = () => {
               Send Message
             </button>
           </form>
-          {status && <p className="text-center mt-4 text-sm font-medium">{status}</p>}
+          {status && (
+            <p className={`text-center mt-4 text-sm font-medium ${status.startsWith('✅') ? 'text-green-600' : 'text-red-500'}`}>
+              {status}
+            </p>
+          )}
         </motion.div>
       </div>
 
-      {/* About Company - Bottom */}
+      {/* ConnectPage Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <ConnectPage />
+      </motion.section>
+
+      {/* Social Media Footer */}
       <motion.div
-        className="py-12 px-6 text-center max-w-5xl mx-auto"
+        className="bg-black bg-opacity-30 py-6 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-4xl font-bold mb-4">Why Choose Sardius IT Technologies?</h2>
-        <p className="text-lg text-gray-200">
-          From IT development to overseas education, Sardius IT Technologies is your one-stop solution.
-          We combine innovation, technology, and personalized services to meet your unique needs. 
-          Trust us to deliver excellence at every step of your journey.
-        </p>
+        <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
+        <div className="flex justify-center gap-6 text-2xl">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+            <FaFacebookF />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">
+            <FaInstagram />
+          </a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
+            <FaWhatsapp />
+          </a>
+        </div>
       </motion.div>
-
-      {/* Social Icons Footer */}
-      <div className="flex justify-center gap-6 py-6 bg-black/30">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-blue-400">
-          <FaFacebookF />
-        </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-pink-400">
-          <FaInstagram />
-        </a>
-        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-green-400">
-          <FaWhatsapp />
-        </a>
-      </div>
 
     </div>
   );
 };
-
 export default ContactForm;

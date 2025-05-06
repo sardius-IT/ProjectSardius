@@ -22,6 +22,14 @@ const cards = [
   },
   {
     category: "Development",
+    title: "Backend Developer",
+    image: Friends,
+    hoverText: "A QA Engineer is responsible for testing software manually to make sure it works correctly, is user-friendly, and free of bugs before it’s released.",
+    hoverimage: Modern,
+    link: "/leadership",
+  },
+  {
+    category: "Development",
     title: "QA Engineer",
     image: Friends,
     hoverText: "A QA Engineer is responsible for testing software manually to make sure it works correctly, is user-friendly, and free of bugs before it’s released.",
@@ -51,7 +59,7 @@ const cards = [
     background: "bg-gradient-to-br from-purple-300 via-pink-300 to-pink-200",
     hoverText: "Hiring full-time employees for long-term roles within the organization.",
     image: Friends,
-    link: "/ai-trends",
+    link: "/Staffing",
   },
   {
     category: "Staffing",
@@ -76,7 +84,7 @@ const cards = [
     hoverText: "Hiring IT talent from other locations (often internationally) to work remotely, usually to reduce costs or access specialized skills.",
     hoverimage: Abstract,
     image: Friends,
-    link: "/economy",
+    link: "/DigitalMarketing",
   },
   {
     category: "digital marketing",
@@ -85,7 +93,7 @@ const cards = [
     hoverText: "Boosting website visibility through SEO strategies.",
     hoverimage: MulitileAI,
     image: Friends,
-    link: "/economy",
+    link: "/DigitalMarketing",
   },
   {
     category: "digital marketing",
@@ -132,13 +140,13 @@ const CardsPage = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const defaultCards = [
-    ...cards.filter((card) => card.category === "Development").slice(0, 3),
-    ...cards.filter((card) => card.category === "Staffing").slice(0, 3),
-    ...cards.filter((card) => card.category === "digital marketing").slice(0, 3),
+    ...cards.filter((card) => card.category === "Development").slice(0, 1),
+    ...cards.filter((card) => card.category === "Staffing").slice(0, 1),
+    ...cards.filter((card) => card.category === "digital marketing").slice(0, 1),
   ];
 
   const filteredCards = activeFilter
-    ? cards.filter((card) => card.category === activeFilter).slice(0, 3)
+    ? cards.filter((card) => card.category === activeFilter).slice(0, 6)
     : defaultCards;
 
   return (
