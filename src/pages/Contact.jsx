@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import ConnectPage from ".././pages/Cards/ConnectPage";
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -60,35 +59,8 @@ const ContactForm = () => {
 
       {/* Contact Section */}
       <div className="flex flex-col md:flex-row p-10 gap-10">
-        {/* Left - Info + Map */}
-        <motion.div
-          className="md:w-1/2 flex flex-col gap-6 bg-white text-gray-800 rounded-3xl shadow-2xl p-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div>
-            <h2 className="text-2xl font-semibold mb-2 text-emerald-950">Sardius IT Technologies</h2>
-
-            <p className="mb-2"><strong>📍 Address:</strong>  Silicon Park, Plot No.23-24,  4thFloor,VIPHills,Madhapur,Hyderabad,500081.</p>
-
-            <p className="mb-2"><strong>📧 Email:</strong> info@sardius.co.in</p>
-
-            <p className="mb-4"><strong>📞 Phone:</strong> +91 98765 43210</p>
-          </div>
-
-          <div className="overflow-hidden rounded-xl border-2 border-purple-300 shadow-lg">
-            <iframe
-              title="Company Location"
-              src="https://www.google.com/search?q=sardius+it+technologies&sca_esv=62f82ff636d943ce&sxsrf=AHTn8zqs8VZb3I6hEVarXJhcq90JVOy1iQ%3A1746531035428&ei=2_IZaIb2Gf2cvr0PpYyEkAs&ved=0ahUKEwjGz9KP346NAxV9jq8BHSUGAbIQ4dUDCBA&uact=5&oq=sardius+it+technologies&gs_lp=Egxnd3Mtd2l6LXNlcnAiF3NhcmRpdXMgaXQgdGVjaG5vbG9naWVzMgUQABiABDICECYyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgUQABjvBTIIEAAYogQYiQUyCBAAGKIEGIkFMgUQABjvBUjmPVCPF1j5NXAEeACQAQCYAb4CoAHCDKoBBzAuMS4zLjK4AQPIAQD4AQGYAgigAt8IwgIIEAAYgAQYsAPCAgcQABiwAxgewgIOEAAYgAQYsAMYhgMYigXCAggQABiwAxjvBcICCxAAGLADGKIEGIkFwgIHEAAYgAQYDcICBhAAGA0YHpgDAIgGAZAGCpIHBzQuMC4yLjKgB-kusgcFMi0yLjK4B8EI&sclient=gws-wiz-serp&lqi=ChdzYXJkaXVzIGl0IHRlY2hub2xvZ2llc1oZIhdzYXJkaXVzIGl0IHRlY2hub2xvZ2llc5IBHWNvbXB1dGVyX3N1cHBvcnRfYW5kX3NlcnZpY2VzqgFcCggvbS8wN2MxdhABKhAiDHRlY2hub2xvZ2llcygAMh8QASIb2iQPUmLyGCHuLj0ptAV0wbh_MjpQ0s74xNpcMhsQAiIXc2FyZGl1cyBpdCB0ZWNobm9sb2dpZXM#rlimm=8031489964217704717https://www.google.com/search?q=sardius+it+technologies&sca_esv=62f82ff636d943ce&sxsrf=AHTn8zqs8VZb3I6hEVarXJhcq90JVOy1iQ%3A1746531035428&ei=2_IZaIb2Gf2cvr0PpYyEkAs&ved=0ahUKEwjGz9KP346NAxV9jq8BHSUGAbIQ4dUDCBA&uact=5&oq=sardius+it+technologies&gs_lp=Egxnd3Mtd2l6LXNlcnAiF3NhcmRpdXMgaXQgdGVjaG5vbG9naWVzMgUQABiABDICECYyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgUQABjvBTIIEAAYogQYiQUyCBAAGKIEGIkFMgUQABjvBUjmPVCPF1j5NXAEeACQAQCYAb4CoAHCDKoBBzAuMS4zLjK4AQPIAQD4AQGYAgigAt8IwgIIEAAYgAQYsAPCAgcQABiwAxgewgIOEAAYgAQYsAMYhgMYigXCAggQABiwAxjvBcICCxAAGLADGKIEGIkFwgIHEAAYgAQYDcICBhAAGA0YHpgDAIgGAZAGCpIHBzQuMC4yLjKgB-kusgcFMi0yLjK4B8EI&sclient=gws-wiz-serp&lqi=ChdzYXJkaXVzIGl0IHRlY2hub2xvZ2llc1oZIhdzYXJkaXVzIGl0IHRlY2hub2xvZ2llc5IBHWNvbXB1dGVyX3N1cHBvcnRfYW5kX3NlcnZpY2VzqgFcCggvbS8wN2MxdhABKhAiDHRlY2hub2xvZ2llcygAMh8QASIb2iQPUmLyGCHuLj0ptAV0wbh_MjpQ0s74xNpcMhsQAiIXc2FyZGl1cyBpdCB0ZWNobm9sb2dpZXM#rlimm=8031489964217704717"
-              width="100%"
-              height="260"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
-        </motion.div>
+        {/* Left Side - Office Info + Map */}
+      
 
         {/* Right - Contact Form */}
         <motion.div 
@@ -157,6 +129,15 @@ const ContactForm = () => {
           )}
         </motion.div>
       </div>
+      <section>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }} // 👈 start hidden and below
+          animate={{ opacity: 1, y: 0 }} // 👈 fade in and slide up
+          transition={{ duration: 0.8, ease: "easeOut" }} // 👈 smooth timing
+        >
+          <ConnectPage />
+        </motion.div>
+      </section>
 
       {/* ConnectPage Section */}
       <motion.section
