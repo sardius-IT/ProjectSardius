@@ -29,7 +29,7 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      if (response.ok) {    
         setStatus('✅ Message sent successfully!');
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       } else {
@@ -42,10 +42,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-900 via-purple-900 to-pink-800 text-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from from-black via-black to-bg-black text-white">
 
       {/* Top Heading Section */}
-      <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 p-16 text-center">
+      <div className="bg-gradient-to-r from-gray-500 via-black-500 to-black-500 p-16 text-center shadow-xl">
         <motion.h1
           className="text-5xl font-bold tracking-wide"
           initial={{ opacity: 0, y: -50 }}
@@ -57,22 +57,12 @@ const ContactForm = () => {
         <p className="mt-4 text-lg text-white/80">We are here to help you grow and succeed!</p>
       </div>
 
-      {/* About Company - Top */}
-      <motion.div
-        className="py-12 px-6 text-center max-w-5xl mx-auto"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        
-      </motion.div>
-
-      {/* Contact Form */}
+      {/* Contact Section */}
       <div className="flex flex-col md:flex-row p-10 gap-10">
         {/* Left Side - Office Info + Map */}
       
 
-        {/* Right Side - Form */}
+        {/* Right - Contact Form */}
         <motion.div 
           className="md:w-1/2 bg-white text-gray-800 rounded-3xl shadow-2xl p-8"
           initial={{ opacity: 0, x: 50 }}
@@ -132,7 +122,11 @@ const ContactForm = () => {
               Send Message
             </button>
           </form>
-          {status && <p className="text-center mt-4 text-sm font-medium">{status}</p>}
+          {status && (
+            <p className={`text-center mt-4 text-sm font-medium ${status.startsWith('✅') ? 'text-green-600' : 'text-red-500'}`}>
+              {status}
+            </p>
+          )}
         </motion.div>
       </div>
       <section>
@@ -145,18 +139,37 @@ const ContactForm = () => {
         </motion.div>
       </section>
 
-      <motion.div 
-      className="md:w-1/2 flex flex-col gap-6"
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      
-    </motion.div>
-     
+      {/* ConnectPage Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <ConnectPage />
+      </motion.section>
+
+      {/* Social Media Footer */}
+      <motion.div
+        className="bg-black bg-opacity-30 py-6 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
+        <div className="flex justify-center gap-6 text-2xl">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+            <FaFacebookF />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">
+            <FaInstagram />
+          </a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
+            <FaWhatsapp />
+          </a>
+        </div>
+      </motion.div>
 
     </div>
   );
 };
-
 export default ContactForm;

@@ -1,4 +1,43 @@
 // src/App.jsx
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
+import CookieBanner from './components/Banner'; // ✅ Import added
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Portfolio from "./pages/Portfolio";
+import Sectors from "./pages/Sectors";
+import Contact from "./pages/Contact";
+import Careers from "./pages/Careers/Careers";
+import AdminLogin from "./pages/AdminLogin";
+import JobApplicationForm from "./pages/Careers/JobForm";
+
+import AdminDashboard from "./pages/AdminDashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+import Developer from "./pages/Cards/Developer";
+import Cloud from "./pages/Rolerate/Cloud";
+import ScrollToTopButton from "./pages/Toparrow";
+import ConnectPage from "./pages/Cards/ConnectPage";
+import Staffing from "./pages/Cards/Staffing";
+import Staffingrate from "./pages/Rolerate/Staffingrate";
+import Digitalmarketingstats from "./pages/Rolerate/Digitalmarketingstats";
+import DigitalMarketing from "./pages/Cards/Digitalmarketing";
+import Contactusbutton from "./pages/Contactusbutton";
+import Trustedbrands from "./pages/Trustedbrands";
+import TeamCategories from "./pages/Team/Teamcategories";
+import Itteam from "./pages/Team/Itteam";
+import HireOptions from "./pages/Team/Hireoptions";
+import Demand from "./pages/Team/Demand";
+import Whychoosetoptal from "./pages/Team/Whychoosetoptal";
+import Clientsatisfaction from "./pages/Team/Clientsatisfaction";
+import Dmteam from "./pages/Team/Dmteam";
+import Projectmanagerteam from "./pages/Team/Projectmanagerteam";
+import ManagementConsultants from "./pages/Team/ManagementConsultants";
+import ProductManagers from "./pages/Team/ProductManagers";
+import ITStaffing from "./pages/Team/ITStaffing";
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -40,13 +79,29 @@ import StatsSection from "./pages/About/StatsSection";
 import Splitbanner from "./pages/About/Splitbanner";
 import TeamMembers from"./pages/TeamMembers"
 function App() {
+  const [showBanner, setShowBanner] = useState(true);
+
+  // Function to hide the cookie banner after accept
+  const handleAcceptCookies = () => {
+    setShowBanner(false);
+    localStorage.setItem("cookiesAccepted", "true");
+  };
+
+  // Check if cookies have already been accepted
+  const cookiesAccepted = localStorage.getItem("cookiesAccepted");
+
   return (
     <>
-      {/* Navbar sits on top */}
+      {/* Top navigation */}
       <Navbar />
-      
-      {/* Main content starts below navbar */}
-      <main className="pt-24  bg-gray-950 text-white flex flex-col">
+
+      {/* Global Cookie Consent Banner with slide-in animation */}
+      {showBanner && !cookiesAccepted && (
+        <CookieBanner onAccept={handleAcceptCookies} />
+      )}
+
+      {/* Page content */}
+      <main className="pt-24 bg-gray-950 text-white flex flex-col">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -55,7 +110,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/admin-login" element={<AdminLogin />} />
-          {/* Protect Admin Dashboard */}
           <Route
             path="/admin"
             element={
@@ -101,3 +155,4 @@ function App() {
 }
 
 export default App;
+
