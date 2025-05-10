@@ -329,10 +329,7 @@ export default function ProductManagers() {
             <section className="p-4">
         <ScrollToTopButton />
       </section>
-      <div>
-        {/* your page content */}
-        <ContactUsButton />
-      </div>
+     
     </>
   );
 }

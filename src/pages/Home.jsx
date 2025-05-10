@@ -120,7 +120,7 @@ const Home = () => {
       <div className="relative w-full h-screen overflow-hidden">
         <video
           key={slides[index].video}
-          className="hidden sm:block absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover"
           src={slides[index].video}
           autoPlay
           loop
@@ -138,7 +138,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Sections */}
+      {/* Split Banner */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -149,6 +149,7 @@ const Home = () => {
         <Splitbanner />
       </motion.section>
 
+      {/* Stats */}
       <motion.section
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -159,6 +160,7 @@ const Home = () => {
         <StatsSection />
       </motion.section>
 
+      {/* Team */}
       <motion.section
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -169,6 +171,7 @@ const Home = () => {
         <TeamCategories />
       </motion.section>
 
+      {/* Services Cards */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -184,6 +187,7 @@ const Home = () => {
         <CardsPage />
       </motion.section>
 
+      {/* Why Choose Us Cards */}
       <h2 className="text-3xl sm:text-5xl font-bold px-4 sm:px-8 my-10 text-white">
         Why Sardius IT Technologies Stands Above the Rest
       </h2>
@@ -226,11 +230,16 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Career Growth Timeline */}
       <h2 className="text-3xl sm:text-4xl font-semibold text-gray-100 mb-6 px-4 sm:px-8">
         Career Growth at Sardius
       </h2>
 
-      <motion.section className="mb-20 px-4 sm:px-8 relative" initial="hidden" animate="visible">
+      <motion.section
+        className="mb-20 px-4 sm:px-8 relative"
+        initial="hidden"
+        animate="visible"
+      >
         <motion.div
           className="absolute left-6 top-0 w-1 bg-blue-500 rounded"
           initial={{ height: 0 }}
@@ -239,7 +248,11 @@ const Home = () => {
         />
         <div className="ml-10 space-y-10 relative">
           {stages.map((stage, i) => (
-            <motion.div key={i} variants={itemVariant} className="flex flex-col sm:flex-row items-start sm:space-x-4 space-y-2 sm:space-y-0">
+            <motion.div
+              key={i}
+              variants={itemVariant}
+              className="flex flex-col sm:flex-row items-start sm:space-x-4 space-y-2 sm:space-y-0"
+            >
               <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center z-10">
                 {i + 1}
               </div>
@@ -254,9 +267,9 @@ const Home = () => {
         </div>
       </motion.section>
 
+      {/* Scroll to Top Button */}
       <section className="p-4 sm:px-8 mt-10 space-y-6">
         <ScrollToTopButton />
-        <ContactUsButton />
       </section>
     </>
   );

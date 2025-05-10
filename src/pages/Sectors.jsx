@@ -158,14 +158,7 @@ const Sectors = () => {
         <ScrollToTopButton />
       </motion.section>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-      >
-        <ContactUsButton />
-      </motion.div>
+     
     </>
   );
 };
