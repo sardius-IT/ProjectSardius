@@ -10,16 +10,15 @@ import { Link } from "react-router-dom";
 const SplitBanner = () => {
   const cards = [
     {
-      title: " Career in Sardius",
+      title: "Career in Sardius",
       content: (
         <>
           <p>
-            Offers global and career opportunities in
-            emerging technologies.
+            Offers global and career opportunities in emerging technologies.
           </p>
           <Link
             to="/careers"
-            className="mt-6 inline-block bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-3 px-10 rounded-2xl transition"
+            className="mt-4 inline-block bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-2 px-6 rounded-xl transition"
           >
             Learn More
           </Link>
@@ -37,7 +36,7 @@ const SplitBanner = () => {
           </p>
           <Link
             to="/TeamMembers"
-            className="mt-6 inline-block bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-3 px-10 rounded-2xl transition"
+            className="mt-4 inline-block bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-2 px-6 rounded-xl transition"
           >
             Learn More
           </Link>
@@ -55,7 +54,7 @@ const SplitBanner = () => {
           </p>
           <Link
             to="/contact"
-            className="mt-6 inline-block bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-3 px-10 rounded-2xl transition"
+            className="mt-4 inline-block bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-2 px-6 rounded-xl transition"
           >
             Learn More
           </Link>
@@ -99,10 +98,7 @@ const SplitBanner = () => {
               <p className="text-sm sm:text-md md:text-sm mb-4">
                 Sardius IT Technologies is a global leader in AI-driven digital
                 consulting, empowering businesses through innovative solutions
-                in cloud, automation, and intelligent analytics. Our mission is
-                to bridge the gap between ambition and execution by delivering
-                future-ready strategies that fuel growth, efficiency, and
-                transformation.
+                in cloud, automation, and intelligent analytics.
               </p>
 
               <Link
@@ -143,11 +139,9 @@ const SplitBanner = () => {
 
             <div className="mt-4 transition-all duration-500 transform md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0">
               <p className="text-sm sm:text-md md:text-sm mb-4">
-                Trusted by clients across  education, and
-                logistics, Sardius IT Technologies delivers results through deep
-                domain expertise and agile digital innovation. We are proud
-                partners in our clients' journey to scale faster, operate
-                smarter, and thrive in the digital economy.
+                Trusted by clients across education and logistics, Sardius IT
+                Technologies delivers results through deep domain expertise and
+                agile digital innovation.
               </p>
 
               <Link
@@ -161,21 +155,19 @@ const SplitBanner = () => {
         </div>
       </div>
 
-      {/* Card Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 h-[350px] text-white font-sans">
+      {/* Cards Section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 h-auto">
         {cards.map((card, index) => (
           <div
             key={index}
-            className="relative p-6 bg-cover bg-center flex items-center justify-center group overflow-hidden"
+            className="group relative h-[350px] p-6 bg-cover bg-center flex items-center justify-center overflow-hidden"
             style={{ backgroundImage: `url(${card.image})` }}
           >
-            <div className="absolute inset-0 bg-black/20 z-0"></div>
-            <div className="relative z-10 text-center px-4">
-              <h2 className="text-3xl font-bold mb-4">{card.title}</h2>
-
-              {/* Only card.content appears on hover */}
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="text-sm space-y-2">{card.content}</div>
+            <div className="absolute inset-0 bg-black/40 z-0"></div>
+            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white p-4">
+              <h3 className="text-2xl font-bold mb-2">{card.title}</h3>
+              <div className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 text-sm space-y-2">
+                {card.content}
               </div>
             </div>
           </div>

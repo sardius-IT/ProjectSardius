@@ -2,21 +2,9 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const stats = [
-  {
-    number: 150,
-    label: "Projects Completed",
-    suffix: "+",
-  },
-  {
-    number: 1000000,
-    label: "Earned Worldwide",
-    suffix: "", // You can use "M" if you prefer "1M"
-  },
-  {
-    number: 200,
-    label: "Professional Members",
-    suffix: "+",
-  },
+  { number: 150, label: "Projects Completed", suffix: "+" },
+  { number: 1000000, label: "Earned Worldwide", suffix: "" },
+  { number: 200, label: "Professional Members", suffix: "+" },
 ];
 
 const formatNumber = (value) => {
@@ -34,7 +22,6 @@ const StatItem = ({ number, label, suffix }) => {
   }, [controls, number]);
 
   useEffect(() => {
-    let start = 0;
     const duration = 2000;
     const startTime = performance.now();
 
@@ -55,12 +42,12 @@ const StatItem = ({ number, label, suffix }) => {
 
   return (
     <motion.div
-      className="text-center px-4"
+      className="text-center sm:w-1/3 w-full px-4"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <h3 className="text-4xl font-bold text-gray-50">
+      <h3 className="text-3xl sm:text-4xl font-bold text-white">
         {formatNumber(count)}
         {suffix}
       </h3>
@@ -71,8 +58,8 @@ const StatItem = ({ number, label, suffix }) => {
 
 const StatsSection = () => {
   return (
-    <section className="flex justify-center py-16 px-4 ">
-      <div className="flex  bg-gray-900  rounded-xl shadow-lg px-10 py-8 w-full max-w-5xl justify-around flex-wrap gap-6">
+    <section className="flex justify-center py-16 px-4">
+      <div className="flex flex-wrap justify-center sm:justify-between gap-y-10 gap-x-6 bg-gray-900 rounded-xl shadow-lg px-6 sm:px-10 py-8 w-full max-w-5xl">
         {stats.map((stat, index) => (
           <StatItem
             key={index}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import CardsPage from "../pages/Cards/Cards";
 import Demand from "../pages/Team/Demand";
-import heroVideo from "../assets/Sardius IT.mp4"; // Replace with your actual video file path
+import heroVideo from "../assets/Sardius IT.mp4";
 import Splitbanner from "../pages/About/Splitbanner";
 import image1 from "../assets/sector1.avif";
 import image2 from "../assets/sector2.avif";
@@ -94,8 +94,6 @@ const Sectors = () => {
         <CardsPage filter={filter} />
       </motion.section>
 
-  
-
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -113,14 +111,14 @@ const Sectors = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className={`flex flex-col md:flex-row ${item.reverse ? "md:flex-row-reverse" : ""} items-center gap-6`}
             >
-              <div className="md:w-1/2">
+              <div className="md:w-1/2 w-full">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-64 object-cover rounded-2xl shadow"
                 />
               </div>
-              <div className="md:w-1/2">
+              <div className="md:w-1/2 w-full px-2 md:px-4">
                 <h2 className="text-2xl font-semibold text-gray-50 mb-2">{item.title}</h2>
                 <hr className="w-20 h-1 bg-purple-600 border border-purple-600 " />
                 <p className="text-gray-400 py-2">{item.subtitle}</p>
