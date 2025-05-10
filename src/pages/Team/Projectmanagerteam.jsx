@@ -355,10 +355,7 @@ export default function ProjectManagerTeam() {
       <section className="p-4">
         <ScrollToTopButton />
       </section>
-      <div>
-        {/* your page content */}
-        <ContactUsButton />
-      </div>
+      
     </>
   );
 }

@@ -27,7 +27,6 @@ const teamData = [
   { name: "Shilpa.k", title: "IT Recruitment", image: Shilpa },
   { name: "Vivek.K", title: "Frontend Developer", image: Vivek },
   { name: "Manisha.P", title: "Frontend Developer", image: Manisha },
-  { name: "Aishwarya.P", title: "Frontend Developer", image: image4 },
   { name: "Mani.k", title: "Backend Developer", image: Mani },
   { name: "Sai Meghana.k", title: "Backend Developer", image: Meghana },
   { name: "Geetha.B", title: "DevOps Engineer", image: Geetha },

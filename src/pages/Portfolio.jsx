@@ -36,9 +36,9 @@ export default function Portfolio() {
     <>
       {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
-        {/* Hide video on small to save bandwidth */}
+        {/* Video shown on all devices now */}
         <video
-          className="hidden sm:block absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover"
           src={PortfolioVideo}
           autoPlay
           loop
@@ -111,9 +111,8 @@ export default function Portfolio() {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.3, duration: 0.6 }}
-              className="flex flex-col items-center text-center max-w-xs"
+              className="flex flex-col items-center text-center max-w-xs relative"
             >
-              {/* Connector arrow only on md+ */}
               {idx !== 0 && (
                 <div className="hidden md:block absolute left-[-160px] top-1/2 transform -translate-y-1/2">
                   <div className="h-px w-36 bg-blue-500 relative">
@@ -169,7 +168,6 @@ export default function Portfolio() {
       {/* Footer Buttons */}
       <section className="py-8 px-4 sm:px-8 lg:px-16 space-y-4 flex flex-col sm:flex-row items-center justify-between">
         <ScrollToTopButton />
-        <ContactUsButton />
       </section>
     </>
   );
