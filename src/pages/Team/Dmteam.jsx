@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import image1 from "../../assets/business.avif";
-import image2 from "../../assets/abstract.avif";
+import image1 from "../../assets/employee/Chran Vakiti.jpg";
+import image2 from "../../assets/employee/Bhavani.jpg";
+import Img3 from "../../assets/employee/MANASA.jpg";
 import TrustedBrands from "../../pages/Trustedbrands";
 import Job from "../../pages/Contact";
-import Img1 from "../../assets/resource.avif";
-
-
+import ContactUsButton from "../../pages/Contactusbutton";
+import ScrollToTopButton from "../../pages/Toparrow";
 
 export default function DigitalMarketingTeam() {
   const images = [image1, image2];
@@ -21,16 +21,16 @@ export default function DigitalMarketingTeam() {
   }, []);
   const fadeIn = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
   const slideIn = {
     hidden: { opacity: 0, x: 200 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
   };
-  
+
   const hoverEffect = {
     rest: { scale: 1 },
-    hover: { scale: 1.05, transition: { duration: 0.3 } },
+    hover: { scale: 1.05, transition: { duration: 0.3 } },
   };
   const steps = [
     {
@@ -102,7 +102,7 @@ export default function DigitalMarketingTeam() {
               transition={{ duration: 0.6 }}
               className="text-5xl font-bold text-white leading-tight"
             >
-              Hire the <span className="text-cyan-400">Top 5%</span> of <br />{" "}
+            We Have<span className="text-cyan-400">Top 5%</span> of <br />{" "}
               Digital Marketers
             </motion.h1>
             <motion.p
@@ -269,30 +269,29 @@ export default function DigitalMarketingTeam() {
         variants={fadeIn}
       >
         <h2 className="text-4xl font-semibold text-gray-100 mb-6">
-        Meet Sardius  Digital Marketers
+          Meet Sardius Digital Marketers
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              name: "Mani ",
+              name: "Charan Vakiti",
               role: "Digital Marketing Executive",
               quote: " Paid Ads (Google Ads, Meta Ads)",
+              image: image1,
+            },
+            {
+              name: "Bhavani.G ",
+              role: "Digital Marketing Executive",
+              quote: "SEO – Search Engine Optimization",
               image: image2,
             },
             {
-              name: "Vivek ",
-              role: "Digital Marketing Executive",
-              quote: "SEO – Search Engine Optimization",
-              image:image1,
-            },
-            {
-              name: "Charan",
+              name: "MANASA.P",
               role: "Digital Marketing Executive",
               quote: "Social Media Marketing",
-              image: Img1,
+              image: Img3,
             },
-           
           ].map((member, i) => (
             <div key={i} className="relative w-full h-64 perspective">
               <motion.div
@@ -302,11 +301,11 @@ export default function DigitalMarketingTeam() {
               >
                 {/* Front Face */}
                 <div className="absolute w-full h-full backface-hidden bg-gray-800 text-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-center items-center">
-                <img
-                src={member.image}
-                alt={member.name}
-                className="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white"
-              />
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white"
+                  />
                   <h3 className="text-xl font-semibold">{member.name}</h3>
                   <p className="text-gray-400 mt-2">{member.role}</p>
                 </div>
@@ -321,6 +320,13 @@ export default function DigitalMarketingTeam() {
           ))}
         </div>
       </motion.section>
+      <section className="p-4">
+        <ScrollToTopButton />
+      </section>
+      <div>
+        {/* your page content */}
+        <ContactUsButton />
+      </div>
     </>
   );
 }

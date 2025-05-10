@@ -13,18 +13,19 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-12 px-6">
+    
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Sardius Services */}
         <div>
           <h3 className="font-semibold mb-4">Sardius IT Services</h3>
           <ul className="space-y-2 text-gray-300 text-sm">
-            <li><Link to="/career-guidance">Career Guidance</Link></li>
-            <li><Link to="/internships">Developer</Link></li>
-            <li><Link to="/study-abroad">Study Abroad Support</Link></li>
-            <li><Link to="/education-services">Overseas Education Services</Link></li>
-            <li><Link to="/training">Tech Skill Training</Link></li>
-            <li><Link to="/resume-support">Resume & Job Support</Link></li>
-            <li><Link to="/it-consulting">IT Consulting</Link></li>
+            <li><Link to="/careers">Career Guidance</Link></li>
+            <li><Link to="/developer">Developer</Link></li>
+            <li><Link to="/DigitalMarketing">DigitalMarketing </Link></li>
+            <li><Link to="/Staffing">Staffing</Link></li>
+            <li><Link to="/sectors">Tech Skill </Link></li>
+            <li><Link to="/careers">Resume & Job Support</Link></li>
+            <li><Link to="/portfolio">IT Consulting</Link></li>
           </ul>
         </div>
 
@@ -34,10 +35,12 @@ const Footer = () => {
           <ul className="space-y-2 text-gray-300 text-sm">
             <li><Link to="/about">About Sardius</Link></li>
             <li><Link to="/about">Our Vision</Link></li>
-            <li><Link to="/careers">Careers</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="">Testimonials</Link></li>
-            <li><Link to="/partners">Partners</Link></li>
+            <li><Link to="/TeamMembers">Our team</Link></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/">Partners</Link></li>
+            <li>
+            <Link to="/admin-login">Admin Login</Link>
+          </li>
           </ul>
         </div>
 
@@ -46,7 +49,7 @@ const Footer = () => {
           <h3 className="font-semibold mb-4">Legal & Help</h3>
           <ul className="space-y-2 text-gray-300 text-sm mb-6">
             <li><Link to="/terms">Terms & Conditions</Link></li>
-            <li><Link to="/privacy">Privacy Policy</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
             <li><Link to="/cookies">Cookie Settings</Link></li>
           </ul>
           <h3 className="font-semibold mb-4">Support</h3>

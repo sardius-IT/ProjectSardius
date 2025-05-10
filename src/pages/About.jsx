@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import Image from "../assets/about2.jpg";
 import image1 from "../assets//modern.avif";
-import image2 from "../assets/friends.webp";
-import image3 from "../assets/friends.webp";
-import image5 from "../assets/mulitile AI.webp";
-import Image6 from "../assets/modern.avif";
+import image2 from "../assets/about7.jpg";
+import image3 from "../assets/about1.jpg";
+import image5 from "../assets/about3.jpg";
+import Image6 from "../assets/about6.avif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -11,6 +12,8 @@ import { motion } from "framer-motion";
 import StrategySection from "../pages/About/StrategySection";
 import StatsSection from "../pages/About/StatsSection";
 import TrustedBrands from "../pages/Trustedbrands";
+import ContactUsButton from "../pages/Contactusbutton";
+import ScrollToTopButton from "../pages/Toparrow";
 const About = () => {
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
@@ -46,13 +49,23 @@ const About = () => {
 
   return (
     <div className="p-">
-      <section className="text-white py-20 px-12">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl py-6 font-bold ">About us</h1>
-          <h2 className="text-gray-50 text-2xl  mb-4">
-            Empowering Enterprises with End-to-End IT Solutions in Development,
-            DevOps, Testing, Staffing, and Digital Marketing.
-          </h2>
+      <section className="text-white ">
+        <div className="relative w-full sm:h-[500px] md:h-[600px]">
+          <img
+            src={Image}
+            alt="About Us"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+          <div className="absolute top-0 left-0 w-full h-full bg-black/30" />
+          <div className="relative z-10 flex items-center justify-center h-full">
+            <div className="text-center text-white px-4 max-w-4xl">
+              <h1 className="text-3xl sm:text-5xl font-bold mb-4">About Us</h1>
+              <h2 className="text-base sm:text-xl md:text-2xl text-gray-100 leading-relaxed">
+                Empowering Enterprises with End-to-End IT Solutions in
+                Development, DevOps, Testing, Staffing, and Digital Marketing.
+              </h2>
+            </div>
+          </div>
         </div>
 
         <motion.section
@@ -72,19 +85,18 @@ const About = () => {
                 Who We Are
               </h3>
               <h2 className="text-xl mb-5 py-3">
-                Sardius IT Technologies is a global technology consulting and
-                cybersecurity services company committed to empowering
-                organizations through intelligent digital solutions. We
-                specialize in tailoring secure, scalable, and innovative systems
-                to meet your business needs.
+                We are Sardius IT Technologies a forward-thinking IT solutions
+                company dedicated to helping businesses thrive in the digital
+                age. We are a team of passionate professionals delivering
+                high-quality services in software development, IT staffing,
+                digital marketing, and cloud technologies.
                 <div className="py-3">
-                  With operations in multiple countries, we deliver excellence
-                  on a global scale.
+                  Driven by Innovation, Powered by People, Proven by Results
                 </div>
                 <div>
                   <StatsSection />
                   <strong>
-                    Headquartered in Chennai, India with international reach.
+                    Headquartered in Hyberabad , India with International reach.
                   </strong>
                 </div>
               </h2>
@@ -95,9 +107,11 @@ const About = () => {
                 How We Work
               </h3>
               <p className=" text-gray-50 text-xl">
-                We prioritize transparency, collaboration, and agility in every
-                project. From product development to deployment, Sardius ensures
-                seamless communication and cutting-edge technology integration.
+                We collaborate with startups, enterprises, and global
+                organizations across various industries to deliver tailored IT
+                solutions. Our clients trust us for our commitment to quality,
+                innovation, and a partnership-driven approach that drives real
+                business results.
               </p>
             </div>
           </div>
@@ -186,7 +200,7 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <img src={image5} alt="community service" />
               <div className="flex justify-center items-center text-center text-xl">
-                Sardius IT Technologies actively promotes responsible AI
+                We actively promotes responsible AI
                 development, community engagement, and skill empowerment to
                 enhance global cybersecurity awareness.
               </div>
@@ -200,7 +214,7 @@ const About = () => {
               Our Leadership Philosophy
             </h3>
             <p className="text-gray-50 text-lg py-5">
-              Leadership at Sardius is cultivated through adaptive mindsets and
+              We cultivated through adaptive mindsets and
               measurable results. We believe great leaders are built through
               mentorship, empowerment, and innovation.
             </p>
@@ -261,20 +275,26 @@ const About = () => {
       </section>
 
       {/* Left - Info + Map */}
-    
-        <div className="py-2">
-          <section className="w-screen h-screen overflow-hidden">
-            <iframe
-              title="Sardius IT Technologies Fullscreen Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2894533508255!2d78.3836257!3d17.4513199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91007a623423%3A0x6f759591de4fa10d!2sSardius%20IT%20Technology!5e0!3m2!1sen!2sin!4v1714997152005!5m2!1sen!2sin"
-              className="w-full h-full "
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </section>
-        </div>
-      
+
+      <div className="py-2">
+        <section className="w-screen h-screen overflow-hidden">
+          <iframe
+            title="Sardius IT Technologies Fullscreen Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2894533508255!2d78.3836257!3d17.4513199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91007a623423%3A0x6f759591de4fa10d!2sSardius%20IT%20Technology!5e0!3m2!1sen!2sin!4v1714997152005!5m2!1sen!2sin"
+            className="w-full h-full "
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
+      </div>
+      <section className="p-4">
+        <ScrollToTopButton />
+      </section>
+      <div>
+        {/* your page content */}
+        <ContactUsButton />
+      </div>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Illustration from "../../assets/mulitile AI.webp"; // (change to your staffing image)
-import staffingImage1 from "../../assets/abstract.avif";
-import staffingImage2 from "../../assets/business.avif";
-import staffingImage3 from "../../assets/mulitile AI.webp";
+import Illustration from "../../assets/staffing3.avif"; // (change to your staffing image)
+import staffingImage1 from "../../assets/about6.avif";
+import staffingImage2 from "../../assets/staffing2.avif";
+import staffingImage3 from "../../assets/staffing1.avif";
 import Staffingrate from "../Rolerate/Staffingrate";
 import ScrollToTopButton from "../../pages/Toparrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

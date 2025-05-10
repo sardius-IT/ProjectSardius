@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import image1 from "../../assets/modern.avif";
-import image2 from "../../assets/resource.avif";
-import image3 from "../../assets/resource.avif";
+import image1 from "../../assets/employee/vivek.jpg";
+import image2 from "../../assets/employee/koude mani.jpg";
+import image3 from "../../assets/employee/divya.jpg";
 import image4 from "../../assets/mulitile AI.webp";
 import TrustedBrands from "../../pages/Trustedbrands";
 import Job from "../../pages/Contact";
-
+import ContactUsButton from "../../pages/Contactusbutton";
+import ScrollToTopButton from "../../pages/Toparrow";
 export default function Itteam() {
-  const images = [image1, image2];
+  const images = [image1, image2,image3];
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -111,7 +112,7 @@ export default function Itteam() {
               transition={{ duration: 0.6 }}
               className="text-5xl font-bold text-white leading-tight"
             >
-              Hire the <span className="text-cyan-400">Top 5%</span> of <br /> Developers
+            We Have <span className="text-cyan-400">Top 5%</span> of <br /> Developers
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -265,28 +266,28 @@ export default function Itteam() {
               variants={fadeIn}
             >
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-12 transition-opacity duration-1000 ">
-                Meet Sardius Management Consultants
+                Meet Sardius  Senior Developers
               </h1>
       
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                   {
-                    name: "Mani ",
-                    role: "Management Consultants",
-                    quote: " Paid Ads (Google Ads, Meta Ads)",
-                    image: image2,
-                  },
-                  {
-                    name: "Vivek ",
-                    role: "Management Consultants",
-                    quote: "SEO – Search Engine Optimization",
+                    name: "Vivek",
+                    role: " Senior Software Engineer",
+                    quote: "Frontend Developer ",
                     image: image1,
                   },
                   {
-                    name: "Charan",
-                    role: "Management Consultants",
-                    quote: "Social Media Marketing",
-                    image: image4,
+                    name: "Mani",
+                    role: "Senior Software Engineer",
+                    quote: "Backend Developer",
+                    image: image2,
+                  },
+                  {
+                    name: "Divya Madhuri",
+                    role: "Senior Software Engineer",
+                    quote: "QA Engineer",
+                    image: image3,
                   },
                 ].map((member, i) => (
                   <div key={i} className="relative w-full h-64 perspective">
@@ -315,7 +316,15 @@ export default function Itteam() {
                   </div>
                 ))}
               </div>
-            </motion.section>
+            </motion.section> <section className="p-4">
+                    <ScrollToTopButton />
+                  </section>
+                  <div>
+                    {/* your page content */}
+                    <ContactUsButton />
+                  </div>
+                
+
     </>
   );
 }

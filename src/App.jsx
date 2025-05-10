@@ -1,46 +1,11 @@
 // src/App.jsx
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/layout/Navbar";
+
 import CookieBanner from './components/Banner'; // ✅ Import added
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
-import Sectors from "./pages/Sectors";
-import Contact from "./pages/Contact";
-import Careers from "./pages/Careers/Careers";
-import AdminLogin from "./pages/AdminLogin";
-import JobApplicationForm from "./pages/Careers/JobForm";
-
-import AdminDashboard from "./pages/AdminDashboard";
-import ProtectedRoute from "./components/ProtectedRoute";
-
-import Developer from "./pages/Cards/Developer";
-import Cloud from "./pages/Rolerate/Cloud";
-import ScrollToTopButton from "./pages/Toparrow";
-import ConnectPage from "./pages/Cards/ConnectPage";
-import Staffing from "./pages/Cards/Staffing";
-import Staffingrate from "./pages/Rolerate/Staffingrate";
-import Digitalmarketingstats from "./pages/Rolerate/Digitalmarketingstats";
-import DigitalMarketing from "./pages/Cards/Digitalmarketing";
-import Contactusbutton from "./pages/Contactusbutton";
-import Trustedbrands from "./pages/Trustedbrands";
-import TeamCategories from "./pages/Team/Teamcategories";
-import Itteam from "./pages/Team/Itteam";
-import HireOptions from "./pages/Team/Hireoptions";
-import Demand from "./pages/Team/Demand";
-import Whychoosetoptal from "./pages/Team/Whychoosetoptal";
-import Clientsatisfaction from "./pages/Team/Clientsatisfaction";
-import Dmteam from "./pages/Team/Dmteam";
-import Projectmanagerteam from "./pages/Team/Projectmanagerteam";
-import ManagementConsultants from "./pages/Team/ManagementConsultants";
-import ProductManagers from "./pages/Team/ProductManagers";
-import ITStaffing from "./pages/Team/ITStaffing";
-
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-
+import PrivacyPolicy from './pages/Footer/PrivacyPolicy';
+import TermsAndConditions from './pages/Footer/TermsAndConditions';
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
@@ -77,7 +42,14 @@ import ITStaffing from"./pages/Team/ITStaffing";
 import StrategySection from "././pages/About/StrategySection";
 import StatsSection from "./pages/About/StatsSection";
 import Splitbanner from "./pages/About/Splitbanner";
-import TeamMembers from"./pages/TeamMembers"
+import TeamMembers from"./pages/TeamMembers";
+import FAQ from './pages/Footer/FAQ';
+import StrategyConsultants from "./pages/Rolerate/StrategyConsultants";
+import TechnologyConsultants from "./pages/Rolerate/TechnologyConsultants";
+import FinancialConsultants from "./pages/Rolerate/FinancialConsultants";
+import TechnicalProductManagers from "./pages/Rolerate/TechnicalProductManagers";
+import GrowthProductManagers from "./pages/Rolerate/GrowthProductManagers"
+import JobForm from "./pages/Careers/JobForm";
 function App() {
   const [showBanner, setShowBanner] = useState(true);
 
@@ -110,6 +82,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/apply" element={<JobForm/>} />
           <Route
             path="/admin"
             element={
@@ -146,6 +119,14 @@ function App() {
           <Route path="/StatsSection.jsx" element={<StatsSection/>} />
           <Route path="/Splitbanner" element={<Splitbanner/>} />
           <Route path="/TeamMembers" element={<TeamMembers/>} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/FAQ" element={ <FAQ />} />
+          <Route path="/StrategyConsultants" element={ <StrategyConsultants/>} />
+          <Route path="/TechnologyConsultants" element={ <TechnologyConsultants/>} />
+          <Route path="/FinancialConsultants" element={ <FinancialConsultants/>} />
+          <Route path="/TechnicalProductManagers" element={ <TechnicalProductManagers/>} />
+          <Route path="/GrowthProductManagers" element={ <GrowthProductManagers/>} />
         </Routes>
 
       </main>

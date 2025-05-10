@@ -2,16 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import image1 from "../../assets/business.avif";
-import image2 from "../../assets/modern.avif";
-import image3 from "../../assets/resource.avif";
+import image1 from "../../assets/employee/rajinikanth.jpg";
+import image2 from "../../assets/employee/Manisha.jpg";
+import image3 from "../../assets/employee/kanyani.jpg";
 import image4 from "../../assets/mulitile AI.webp";
 import TrustedBrands from "../../pages/Trustedbrands";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ContactUsButton from "../../pages/Contactusbutton";
+import ScrollToTopButton from "../../pages/Toparrow";
 
 export default function Staffing() {
-  const images = [image1, image2];
+  const images = [image1, image3];
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -120,8 +122,9 @@ export default function Staffing() {
               transition={{ duration: 0.6 }}
               className="text-4xl font-bold text-white leading-tight"
             >
-              Smart <span className="text-cyan-400">Staffing Solutions</span>{" "}
-              <br /> from Sardius IT Technologies
+              We Connect You with
+              <br /> <span className="text-cyan-400">Top-Quality</span>{" "}
+              Candidates
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -129,8 +132,11 @@ export default function Staffing() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-white mt-6 text-lg"
             >
-              Access reliable, skilled professionals across IT, operations, and
-              support roles — when you need them most.
+              At Sardius IT Technologies, we provide reliable and efficient
+              staffing solutions tailored to your business needs. From IT
+              specialists to corporate roles, we connect you with skilled
+              professionals who fit your culture and drive results fast,
+              flexible, and hassle-free hiring.
             </motion.p>
             <motion.div
               initial={{ scale: 0 }}
@@ -210,55 +216,55 @@ export default function Staffing() {
       </section>
 
       {/* Steps */}
-       <section className="min-h-screen flex flex-col items-center justify-center p-6 ">
-         <h1 className="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
-           How to Hire Staffing Through Sardius
-         </h1>
- 
-         <div className="relative flex flex-col md:flex-row items-center justify-center gap-24 md:gap-48 w-full max-w-7xl">
-           {steps.map((step, index) => (
-             <motion.div
-               key={index}
-               initial={{ scale: 0 }}
-               whileInView={{ scale: 1 }}
-               whileHover={{ scale: 1.05 }}
-               viewport={{ once: true }}
-               transition={{ delay: index * 0.3, duration: 0.6 }}
-               className="flex flex-col items-center text-center relative  px-6 py-8 rounded-xl shadow-md md:hover:shadow-xl transition"
-             >
-               {index !== 0 && (
-                 <div className="absolute -left-48 top-16 transform -translate-y-1/2 h-px bg-blue-500 w-40 hidden md:block">
-                   <div className="absolute -right-3 top-1/2 transform -translate-y-1/2">
-                     <svg
-                       xmlns="http://www.w3.org/2000/svg"
-                       fill="none"
-                       viewBox="0 0 24 24"
-                       strokeWidth="2"
-                       stroke="#3B82F6"
-                       className="w-6 h-6"
-                     >
-                       <path
-                         strokeLinecap="round"
-                         strokeLinejoin="round"
-                         d="M12 4l6 8-6 8"
-                       />
-                     </svg>
-                   </div>
-                 </div>
-               )}
-               <div className="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center text-2xl text-blue-600 font-bold">
-                 {step.number}
-               </div>
-               <h3 className="mt-8 font-bold text-white text-center">
-                 {step.title}
-               </h3>
-               <p className="mt-6 text-sm max-w-xs text-gray-300">
-                 {step.description}
-               </p>
-             </motion.div>
-           ))}
-         </div>
-       </section>
+      <section className="min-h-screen flex flex-col items-center justify-center p-6 ">
+        <h1 className="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
+          How to Hire Staffing Through Sardius
+        </h1>
+
+        <div className="relative flex flex-col md:flex-row items-center justify-center gap-24 md:gap-48 w-full max-w-7xl">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.3, duration: 0.6 }}
+              className="flex flex-col items-center text-center relative  px-6 py-8 rounded-xl shadow-md md:hover:shadow-xl transition"
+            >
+              {index !== 0 && (
+                <div className="absolute -left-48 top-16 transform -translate-y-1/2 h-px bg-blue-500 w-40 hidden md:block">
+                  <div className="absolute -right-3 top-1/2 transform -translate-y-1/2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="#3B82F6"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4l6 8-6 8"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              )}
+              <div className="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center text-2xl text-blue-600 font-bold">
+                {step.number}
+              </div>
+              <h3 className="mt-8 font-bold text-white text-center">
+                {step.title}
+              </h3>
+              <p className="mt-6 text-sm max-w-xs text-gray-300">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
       {/* Skills */}
       <section className="min-h-screen py-12 px-6 bg-gray-950">
@@ -330,22 +336,22 @@ export default function Staffing() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              name: "Mani ",
-              role: "Management Consultants",
-              quote: " Paid Ads (Google Ads, Meta Ads)",
-              image: image2,
-            },
-            {
-              name: "Vivek ",
-              role: "Management Consultants",
-              quote: "SEO – Search Engine Optimization",
+              name: "Rajinikanth.K ",
+              role: "Staffing",
+              quote: " Permanent Staffing",
               image: image1,
             },
             {
-              name: "Charan",
-              role: "Management Consultants",
-              quote: "Social Media Marketing",
-              image: image4,
+              name: "Yamini Renuka.S ",
+              role: "Staffing",
+              quote: "Permanent Staffing",
+              image: image2,
+            },
+            {
+              name: "Kalyani.M",
+              role: "Staffing",
+              quote: "Permanent Staffing",
+              image: image3,
             },
           ].map((member, i) => (
             <div key={i} className="relative w-full h-64 perspective">
@@ -375,6 +381,13 @@ export default function Staffing() {
           ))}
         </div>
       </motion.section>
+      <section className="p-4">
+        <ScrollToTopButton />
+      </section>
+      <div>
+        {/* your page content */}
+        <ContactUsButton />
+      </div>
     </>
   );
 }

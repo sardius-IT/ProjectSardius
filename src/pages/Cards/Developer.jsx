@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import cloudImage from "../../assets/modern.avif";
-import Illustration from "../../assets/resource.avif";
-import clouds from "../../assets/business.avif";
+import cloudImage from "../../assets/backend1.avif";
+import Illustration from "../../assets/developer1.avif";
+import clouds from "../../assets/deops1.avif";
+import clo from "../../assets/about6.avif";
+import clou from "../../assets/about7.jpg";
+import cl from "../../assets/sector3.avif";
 import Cloud from "../Rolerate/Cloud";
 import ScrollToTopButton from "../../pages/Toparrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -92,7 +95,7 @@ function Developer() {
       title: "QA Engineer",
       description:
         "QA Engineers are responsible for testing applications to ensure they are reliable and perform well.",
-      image: cloudImage,
+      image: cl,
       cards: [
         {
           title: "Selenium",
@@ -124,7 +127,7 @@ function Developer() {
       title: "DevOps Engineer",
       description:
         "DevOps engineers bridge the gap between development and operations teams.",
-      image: clouds,
+      image: clou,
       cards: [
         {
           title: "Docker",
@@ -156,7 +159,7 @@ function Developer() {
       title: "Mobile App Developer",
       description:
         "Mobile developers create apps that run on iOS and Android devices.",
-      image: cloudImage,
+      image: clo,
       cards: [
         {
           title: "React Native",

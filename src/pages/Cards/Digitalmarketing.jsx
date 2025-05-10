@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import marketingImage from "../../assets/business.avif";
-import socialMediaImage from "../../assets/friends.webp";
-import seoImage from "../../assets/mulitile AI.webp";
+import marketingImage from "../../assets/dm7.avif";
+import marketing from "../../assets/dm2.avif";
+import marketingIm from "../../assets/dm1.avif";
+import socialMediaImage from "../../assets/digitalmarketing.png";
+import seoImage from "../../assets/dm5.avif";
 import DigitalMarketingStats from "../../pages/Rolerate/Digitalmarketingstats";
 import ScrollToTopButton from "../../pages/Toparrow";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,7 +29,7 @@ function DigitalMarketing() {
     {
       title: "SEO Specialist",
       description:
-        "SEO specialists improve website visibility on search engines, driving organic traffic through keyword strategies and technical optimization.",
+        "We improve website visibility on search engines, driving organic traffic through keyword strategies and technical optimization.",
       image: seoImage,
       cards: [
         {
@@ -59,7 +61,7 @@ function DigitalMarketing() {
     {
       title: "Social Media Manager",
       description:
-        "Social media managers create and manage brand presence on platforms like Instagram, LinkedIn, and Twitter to boost engagement.",
+        "We create and manage brand presence on platforms like Instagram, LinkedIn, and Twitter to boost engagement.",
       image: socialMediaImage,
       cards: [
         {
@@ -91,8 +93,8 @@ function DigitalMarketing() {
     {
       title: "PPC Specialist",
       description:
-        "PPC (Pay-Per-Click) specialists create paid campaigns on Google, Facebook, and LinkedIn to generate leads and maximize ROI.",
-      image: marketingImage,
+        "We create paid campaigns on Google, Facebook, and LinkedIn to generate leads and maximize ROI.",
+      image: marketingIm,
       cards: [
         {
           title: "Google Ads",
@@ -121,10 +123,10 @@ function DigitalMarketing() {
       ],
     },
     {
-      title: "Content Marketer",
+      title: "Content Creation",
       description:
-        "Content marketers focus on creating blogs, ebooks, videos, and infographics that attract and nurture prospects through the buyer’s journey.",
-      image: marketingImage,
+        "We delivers engaging, high-quality content tailored to your brand’s voice and goals.",
+      image: marketing,
       cards: [
         {
           title: "Blog Writing",
@@ -185,11 +187,11 @@ function DigitalMarketing() {
             className="text-white text-center md:text-left"
           >
             <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Explore Digital Marketing Roles
+              Fuel Your Growth with Smart Digital Marketing
             </h1>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-              Digital marketing offers diverse career paths that combine
-              creativity, analytics, and technology.
+              Enhance your brand’s visibility and reach through effective,
+              results-driven digital marketing campaigns
             </p>
           </motion.div>
         </div>

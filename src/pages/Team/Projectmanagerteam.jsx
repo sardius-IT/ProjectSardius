@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import image1 from "../../assets/resource.avif";
-import image2 from "../../assets/mulitile AI.webp";
+import image1 from "../../assets/staffing1.avif";
+import image2 from "../../assets/staffing2.avif";
 import image3 from "../../assets/resource.avif";
 import image4 from "../../assets/mulitile AI.webp";
 import TrustedBrands from "../../pages/Trustedbrands";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ContactUsButton from "../../pages/Contactusbutton";
+import ScrollToTopButton from "../../pages/Toparrow";
 
 export default function ProjectManagerTeam() {
   const images = [image1, image2];
@@ -142,8 +144,8 @@ export default function ProjectManagerTeam() {
               transition={{ duration: 0.6 }}
               className="text-5xl font-bold text-white leading-tight"
             >
-              Hire the <span className="text-cyan-400">Top 5%</span> of <br />
-              Project Managers
+            Elite <span className="text-cyan-400">Project Managers</span> <br />
+             Exceptional Results.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -151,10 +153,11 @@ export default function ProjectManagerTeam() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-white mt-6 text-lg"
             >
-              Sardius IT Technologies provides companies with elite project
-              managers to drive execution, optimize processes, and ensure
-              successful delivery. Hire top-tier talent to scale your operations
-              with confidence.
+              At Sardius IT Technologies, our  project managers lead with
+              strategy, agility, and precision. From planning to execution, they
+              ensure every project is delivered on time, within budget, and
+              beyond expectations. Trust us to turn your ideas into impactful
+              digital solutions.
             </motion.p>
             <motion.div
               initial={{ scale: 0 }}
@@ -346,66 +349,16 @@ export default function ProjectManagerTeam() {
           </Link>
         </div>
       </section>
-{/* our team*/}
+      {/* our team*/}
 
-      <motion.section
-        className="mb-16 p-4"
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-      >
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-12 transition-opacity duration-1000 ">
-          Meet Sardius Management Consultants
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              name: "Mani ",
-              role: "Management Consultants",
-              quote: " Paid Ads (Google Ads, Meta Ads)",
-              image: image2,
-            },
-            {
-              name: "Vivek ",
-              role: "Management Consultants",
-              quote: "SEO – Search Engine Optimization",
-              image: image1,
-            },
-            {
-              name: "Charan",
-              role: "Management Consultants",
-              quote: "Social Media Marketing",
-              image: image4,
-            },
-          ].map((member, i) => (
-            <div key={i} className="relative w-full h-64 perspective">
-              <motion.div
-                whileHover={{ rotateY: 180 }}
-                transition={{ duration: 0.8 }}
-                className="relative w-full h-full transform-style-preserve-3d"
-              >
-                {/* Front Face */}
-                <div className="absolute w-full h-full backface-hidden bg-gray-800 text-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-center items-center">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white"
-                  />
-                  <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="text-gray-400 mt-2">{member.role}</p>
-                </div>
-
-                {/* Back Face */}
-                <div className="absolute w-full h-full backface-hidden bg-blue-600 text-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-center items-center transform rotate-y-180">
-                  <p className="text-lg italic">“{member.quote}”</p>
-                  <p className="mt-4 font-semibold">– {member.name}</p>
-                </div>
-              </motion.div>
-            </div>
-          ))}
-        </div>
-      </motion.section>
+ 
+      <section className="p-4">
+        <ScrollToTopButton />
+      </section>
+      <div>
+        {/* your page content */}
+        <ContactUsButton />
+      </div>
     </>
   );
 }

@@ -6,11 +6,14 @@ import CardsPage from "../pages/Cards/Cards";
 import Demand from "../pages/Team/Demand";
 import heroVideo from "../assets/Sardius IT.mp4"; // Replace with your actual video file path
 import Splitbanner from "../pages/About/Splitbanner";
-import image1 from "../assets/abstract.avif";
-import image2 from "../assets/business.avif";
-import image3 from "../assets/business.avif";
-import image4 from "../assets/friends.webp";
+import image1 from "../assets/sector1.avif";
+import image2 from "../assets/sector2.avif";
+import image3 from "../assets/sector3.avif";
+import image4 from "../assets/sector5.avif";
 import TrustedBrands from "../pages/Trustedbrands";
+import ContactUsButton from "../pages/Contactusbutton";
+import ScrollToTopButton from "../pages/Toparrow";
+
 const Sectors = () => {
   const [filter, setFilter] = useState('');
   const [activeFilter, setActiveFilter] = useState('');
@@ -23,6 +26,7 @@ const Sectors = () => {
     setFilter(option);
     setActiveFilter('');
   };
+
   const insights = [
     {
       title: "Navigating Trade Tariff Disruptions in Global Supply Chains: A Call to Action",
@@ -57,7 +61,6 @@ const Sectors = () => {
     <>
       {/* Hero Section with Single Video */}
       <section className="relative min-h-[70vh] pt-20 flex items-center justify-center text-center overflow-hidden">
-        {/* Background Video */}
         <video
           src={heroVideo}
           autoPlay
@@ -66,11 +69,7 @@ const Sectors = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
-
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50 z-10" />
-
-        {/* Hero Text */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -86,7 +85,6 @@ const Sectors = () => {
         </motion.div>
       </section>
 
-      {/* Cards Section */}
       <motion.section
         className="min-h-screen"
         initial={{ opacity: 0, y: 50 }}
@@ -96,7 +94,42 @@ const Sectors = () => {
         <CardsPage filter={filter} />
       </motion.section>
 
-      {/* Demand Team Section */}
+  
+
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-full py-10 px-4"
+      >
+        <div className="max-w-7xl mx-auto space-y-12">
+          {insights.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className={`flex flex-col md:flex-row ${item.reverse ? "md:flex-row-reverse" : ""} items-center gap-6`}
+            >
+              <div className="md:w-1/2">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-64 object-cover rounded-2xl shadow"
+                />
+              </div>
+              <div className="md:w-1/2">
+                <h2 className="text-2xl font-semibold text-gray-50 mb-2">{item.title}</h2>
+                <hr className="w-20 h-1 bg-purple-600 border border-purple-600 " />
+                <p className="text-gray-400 py-2">{item.subtitle}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -104,46 +137,9 @@ const Sectors = () => {
         transition={{ duration: 1 }}
         className="py-12"
       >
-        <Demand />
+        <Splitbanner />
       </motion.section>
-      <section className="w-full py-10 px-4 ">
-      <div className="max-w-7xl mx-auto space-y-12">
-        {insights.map((item, index) => (
-          <div
-            key={index}
-            className={`flex flex-col md:flex-row ${
-              item.reverse ? "md:flex-row-reverse" : ""
-            } items-center gap-6`}
-          >
-            <div className="md:w-1/2">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-64 object-cover rounded-2xl shadow"
-              />
-            </div>
-            <div className="md:w-1/2">
-            
-              <h2 className="text-2xl font-semibold text-gray-50 mb-2">{item.title}</h2>
-              <hr className="w-20 h-1 bg-purple-600 border border-purple-600 "></hr>
-              <p className="text-gray-400 py-2">{item.subtitle}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-     {/* splite banner Team Section */}
-      <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-      className="py-12"
-    >
-      <Splitbanner/>
-    </motion.section>
-     
-      {/* Trusted Brands Section with animation */}
+
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -153,6 +149,25 @@ const Sectors = () => {
       >
         <TrustedBrands />
       </motion.section>
+
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="p-4"
+      >
+        <ScrollToTopButton />
+      </motion.section>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
+        <ContactUsButton />
+      </motion.div>
     </>
   );
 };
