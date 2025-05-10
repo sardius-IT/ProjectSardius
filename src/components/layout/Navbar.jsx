@@ -9,11 +9,11 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className="absolute top-0 left-0 w-full bg-gray-950/40 backdrop-blur-md z-20 shadow-md border-b border-white/">
+    <nav className="absolute top-0 left-0 w-full  backdrop-blur-xs z-20  ">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-start">
-          <img src={logo} alt="Logo" className="h-20 w-30" />
+          <img src={logo} alt="Logo" className="h-24 w-30" />
         </div>
 
         {/* Desktop Menu */}
@@ -24,9 +24,7 @@ const Navbar = () => {
           <li><Link to="/sectors" >What we think</Link></li>
           <li><Link to="/careers">Careers</Link></li>
           <li><Link to="/contact">Contact</Link></li>
-          <li>
-          <Link to="/admin-login">Admin Login</Link>
-        </li>
+         
          
         </ul>
 

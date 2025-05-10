@@ -9,6 +9,8 @@ import image4 from "../../assets/mulitile AI.webp";
 import TrustedBrands from "../../pages/Trustedbrands";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ContactUsButton from "../../pages/Contactusbutton";
+import ScrollToTopButton from "../../pages/Toparrow";
 
 export default function ProductManagers() {
   const images = [image1, image2];
@@ -41,19 +43,19 @@ export default function ProductManagers() {
       title: "Technical Product Managers",
       description:
         "Drive roadmap alignment and technical feasibility across engineering teams.",
-      path: "/technical-product-managers",
+      path: "/TechnicalProductManagers",
     },
     {
       title: "Growth Product Managers",
       description:
         "Optimize product funnels and drive metrics with experimentation and analytics.",
-      path: "/growth-product-managers",
+      path: "/GrowthProductManagers",
     },
     {
       title: "UX-Focused Product Managers",
       description:
         "Enhance product usability and delight through strong UX collaboration.",
-      path: "/ux-product-managers",
+      path: "/",
     },
   ];
 
@@ -322,64 +324,15 @@ export default function ProductManagers() {
       </section>
       {/* our team*/}
       
-            <motion.section
-              className="mb-16 p-4"
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-            >
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-12 transition-opacity duration-1000 ">
-                Meet Sardius Management Consultants
-              </h1>
-      
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  {
-                    name: "Mani ",
-                    role: "Management Consultants",
-                    quote: " Paid Ads (Google Ads, Meta Ads)",
-                    image: image2,
-                  },
-                  {
-                    name: "Vivek ",
-                    role: "Management Consultants",
-                    quote: "SEO – Search Engine Optimization",
-                    image: image1,
-                  },
-                  {
-                    name: "Charan",
-                    role: "Management Consultants",
-                    quote: "Social Media Marketing",
-                    image: image4,
-                  },
-                ].map((member, i) => (
-                  <div key={i} className="relative w-full h-64 perspective">
-                    <motion.div
-                      whileHover={{ rotateY: 180 }}
-                      transition={{ duration: 0.8 }}
-                      className="relative w-full h-full transform-style-preserve-3d"
-                    >
-                      {/* Front Face */}
-                      <div className="absolute w-full h-full backface-hidden bg-gray-800 text-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-center items-center">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white"
-                        />
-                        <h3 className="text-xl font-semibold">{member.name}</h3>
-                        <p className="text-gray-400 mt-2">{member.role}</p>
-                      </div>
-      
-                      {/* Back Face */}
-                      <div className="absolute w-full h-full backface-hidden bg-blue-600 text-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-center items-center transform rotate-y-180">
-                        <p className="text-lg italic">“{member.quote}”</p>
-                        <p className="mt-4 font-semibold">– {member.name}</p>
-                      </div>
-                    </motion.div>
-                  </div>
-                ))}
-              </div>
-            </motion.section>
+            
+           
+            <section className="p-4">
+        <ScrollToTopButton />
+      </section>
+      <div>
+        {/* your page content */}
+        <ContactUsButton />
+      </div>
     </>
   );
 }

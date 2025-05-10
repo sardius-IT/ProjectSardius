@@ -1,20 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import leftBg from "../../assets/friends.webp";
-import rightBg from "../../assets/modern.avif";
-import earningsBg from "../../assets/resource.avif";
-import netzeroBg from "../../assets/abstract.avif";
+import leftBg from "../../assets/about4.avif";
+import rightBg from "../../assets/client1.avif";
+import earningsBg from "../../assets/career1.avif";
+import netzeroBg from "../../assets/ourteam1.avif";
 import agenticBg from "../../assets/employee.avif";
 import { Link } from "react-router-dom";
 
 const SplitBanner = () => {
   const cards = [
     {
-      title: " Career in Sardius   ",
+      title: " Career in Sardius",
       content: (
         <>
           <p>
-            Offers global internship programs and career opportunities in
+            Offers global and career opportunities in
             emerging technologies.
           </p>
           <Link
@@ -28,7 +28,7 @@ const SplitBanner = () => {
       image: earningsBg,
     },
     {
-      title: "our team",
+      title: "Our Team",
       content: (
         <>
           <p>
@@ -74,7 +74,7 @@ const SplitBanner = () => {
           <img
             src={leftBg}
             alt="Left Background"
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
           />
           <div className="relative z-10 text-white text-center max-w-sm sm:max-w-md px-4 sm:px-6">
             <motion.h2
@@ -120,7 +120,7 @@ const SplitBanner = () => {
           <img
             src={rightBg}
             alt="Right Background"
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            className="absolute inset-0 w-full h-full object-cover opacity-80"
           />
           <div className="relative z-10 text-white text-center max-w-sm sm:max-w-md px-4 sm:px-6">
             <motion.h2
@@ -143,7 +143,7 @@ const SplitBanner = () => {
 
             <div className="mt-4 transition-all duration-500 transform md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0">
               <p className="text-sm sm:text-md md:text-sm mb-4">
-                Trusted by clients across finance, healthcare, education, and
+                Trusted by clients across  education, and
                 logistics, Sardius IT Technologies delivers results through deep
                 domain expertise and agile digital innovation. We are proud
                 partners in our clients' journey to scale faster, operate
@@ -169,7 +169,7 @@ const SplitBanner = () => {
             className="relative p-6 bg-cover bg-center flex items-center justify-center group overflow-hidden"
             style={{ backgroundImage: `url(${card.image})` }}
           >
-            <div className="absolute inset-0 bg-black/50 z-0"></div>
+            <div className="absolute inset-0 bg-black/20 z-0"></div>
             <div className="relative z-10 text-center px-4">
               <h2 className="text-3xl font-bold mb-4">{card.title}</h2>
 

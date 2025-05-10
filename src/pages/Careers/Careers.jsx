@@ -2,12 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FaCheckCircle } from 'react-icons/fa';
-import life1 from '../../assets/life1.webp';
+import life1 from '../../assets/life7.jpg';
 import life2 from '../../assets/life2.jpeg';
 import life3 from '../../assets/life3.jpeg';
-import life4 from '../../assets/life4.jpeg';
+import life4 from '../../assets/life4.jpg';
 import life5 from '../../assets/life5.jpeg';
 import life6 from '../../assets/life6.jpeg';
+import ContactUsButton from "../../pages/Contactusbutton";
+import ScrollToTopButton from "../../pages/Toparrow";
 
 // Animations (defined locally)
 export const fadeIn = {
@@ -65,7 +67,7 @@ const Careers = () => {
             { role: 'Frontend Developer', responsibilities: 'Build user-facing interfaces', requiredSkills: 'React.js, Next.js, Tailwind CSS' },
             { role: 'Backend Developer', responsibilities: 'Maintain server-side logic', requiredSkills: 'Node.js, Express.js, MongoDB' },
             { role: 'UI/UX Designer', responsibilities: 'Design intuitive user interfaces', requiredSkills: 'Figma, Sketch, Adobe XD' },
-            { role: 'Digital Marketing Executive', responsibilities: 'Create digital marketing strategies', requiredSkills: 'SEO, Google Ads, Content Marketing' },
+            { role: 'Digital Marketing Executive', responsibilities: 'Create digital marketing strategies', requiredSkills: 'SEO,  Ads Manager, ' },
             { role: 'HR Executive', responsibilities: 'Manage recruitment and employee relations', requiredSkills: 'People Management, HRMS tools' },
           ].map((item, index) => (
             <motion.div key={index} variants={slideInLeft} initial="hidden" animate="visible" className="p-6 bg-gray-800 rounded-xl shadow-xl">
@@ -77,60 +79,7 @@ const Careers = () => {
         </div>
       </motion.section>
 
-      {/* Team Spotlight Section */}
-<motion.section className="mb-16" initial="hidden" animate="visible" variants={fadeIn}>
-  <h2 className="text-4xl font-semibold text-gray-100 mb-6">Team Spotlight</h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {[
-      { name: 'Mani', role: 'Software Developer', quote: 'Sardius IT gives me purpose and challenge every day.' },
-      { name: 'Vivek', role: 'Frontend Developer', quote: 'A place where creativity and collaboration thrive.' },
-      { name: 'Charan', role: 'Digital Marketing Executive', quote: 'Here, my ideas turn into campaigns that reach thousands.' },
-      { name: 'Shreya', role: 'HR Executive', quote: 'I love helping talented people grow in their careers here.' },
-      { name: 'Sravani', role: 'HR Executive', quote: 'It’s rewarding to build and support an amazing team.' },
-      { name: 'Kalyani', role: 'HR Executive', quote: 'Supporting people and nurturing talent is my passion here.' },
-    ].map((member, i) => (
-      <div key={i} className="relative w-full h-64" style={{ perspective: '1000px' }}>
-        <motion.div
-          whileHover={{ rotateY: 180 }}
-          transition={{ duration: 0.8 }}
-          className="relative w-full h-full"
-          style={{ transformStyle: 'preserve-3d' }}
-        >
-          {/* Front Face with Background Image */}
-          <div
-            className="absolute w-full h-full rounded-xl shadow-xl text-white flex flex-col justify-center items-center overflow-hidden"
-            style={{
-              backgroundImage: `url('/images/${member.name.toLowerCase()}.jpg')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backfaceVisibility: 'hidden',
-            }}
-          >
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl" />
-            <div className="relative z-10 text-center">
-              <h3 className="text-xl font-semibold">{member.name}</h3>
-              <p className="text-gray-300 mt-2">{member.role}</p>
-            </div>
-          </div>
-
-          {/* Back Face */}
-          <div
-            className="absolute w-full h-full bg-blue-600 text-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-center items-center"
-            style={{
-              transform: 'rotateY(180deg)',
-              backfaceVisibility: 'hidden',
-            }}
-          >
-            <p className="text-lg italic z-10">“{member.quote}”</p>
-            <p className="mt-4 font-semibold">– {member.name}</p>
-          </div>
-        </motion.div>
-      </div>
-    ))}
-  </div>
-</motion.section>
 
       
       <motion.section className="mb-16" initial="hidden" animate="visible" variants={fadeIn}>
@@ -250,25 +199,18 @@ const Careers = () => {
           Start Your Journey
         </button>
       </motion.div>
+       <section className="p-4">
+              <ScrollToTopButton />
+            </section>
+            <div>
+              {/* your page content */}
+              <ContactUsButton />
+            </div>
+          
 
  
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-6 mt-16">
-        <div className="container mx-auto flex justify-between items-center">
-          <div>
-            <h4 className="text-xl font-semibold">Sardius IT Technologies</h4>
-            <p className="text-gray-400 mt-2">Innovating the Future of Technology</p>
-          </div>
-          <div className="space-x-4">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-twitter text-white text-2xl" />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-linkedin text-white text-2xl" />
-            </a>
-          </div>
-        </div>
-      </footer>
+
+  
     </div>
   );
 };

@@ -1,12 +1,12 @@
 // components/StrategySection.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import image from "../../assets/employee.avif";
+import image from "../../assets/about5.avif";
 import jsIcon from "../../assets/backend.png";
 import phpIcon from "../../assets/frontend.png";
 import invisionIcon from "../../assets/devops.png";
 import iosIcon from "../../assets/digitalmarketing.png";
-import { FaBullseye, FaLightbulb, FaComments } from "react-icons/fa";
+import { FaBullseye, FaLightbulb, FaComments,FaTools } from "react-icons/fa";
 
 const StrategySection = () => {
   const fadeInVariant = {
@@ -64,7 +64,7 @@ const StrategySection = () => {
           <div>
             <h3 className="text-xl font-bold mb-1">Our Mission</h3>
             <p className="text-gray-400 text-sm">
-              At Sardius IT Technologies, our mission is to empower businesses through cutting-edge technology
+               Our mission is to empower businesses through cutting-edge technology
               solutions tailored for efficiency, innovation, and sustainable growth.
             </p>
           </div>
@@ -83,7 +83,6 @@ const StrategySection = () => {
           <div>
             <h3 className="text-xl font-bold mb-1">Our Vision</h3>
             <p className="text-gray-400 text-sm">
-              Sardius IT Technologies envisions becoming a global leader in digital transformation services.
               Our goal is to set industry standards in innovation, trust, and excellence by enabling businesses
               to harness the full potential of modern technologies.
             </p>
@@ -103,9 +102,26 @@ const StrategySection = () => {
           <div>
             <h3 className="text-xl font-bold mb-1">Focus On Quality</h3>
             <p className="text-gray-400 text-sm">
-              Quality is the cornerstone of everything we do at Sardius IT Technologies. From development to
-              deployment, we ensure our solutions are robust, scalable, and future-proof, providing lasting value
+              From development to deployment, We ensure our solutions are robust, scalable, and future-proof, providing lasting value
               to our clients.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* END TO END */}
+        <motion.div
+          className="flex items-start py-10"
+          variants={fadeInVariant}
+          initial="hidden"
+          whileInView="visible"
+          custom={3}
+          viewport={{ once: true }}
+        >
+          <FaTools className="text-purple-600 text-7xl mr-4" />
+          <div>
+            <h3 className="text-xl font-bold mb-1">End-to-End Services.</h3>
+            <p className="text-gray-400 text-sm">
+            From consulting to deployment and ongoing support, we offer a complete suite of IT services under one roof for seamless execution..
             </p>
           </div>
         </motion.div>

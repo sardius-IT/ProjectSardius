@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import image1 from "../../assets/business.avif"; // Replace with actual consulting images
-import image2 from "../../assets/modern.avif";
+import image1 from "../../assets/deops1.avif"; // Replace with actual consulting images
+import image2 from "../../assets/devops2.avif";
 import image3 from "../../assets/resource.avif";
 import image4 from "../../assets/mulitile AI.webp";
 import TrustedBrands from "../../pages/Trustedbrands";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ContactUsButton from "../../pages/Contactusbutton";
+import ScrollToTopButton from "../../pages/Toparrow";
 
 export default function ManagementConsultants() {
   const images = [image1, image2];
@@ -88,26 +90,25 @@ export default function ManagementConsultants() {
       ],
     },
   ];
-  
 
   const teamCategories = [
     {
       title: "Strategy Consultants",
       description:
         "Our Strategy Consultants help shape your long-term vision, create actionable roadmaps, and guide you through high-stakes decisions.",
-      path: "/strategy",
+      path: "/StrategyConsultants",
     },
     {
       title: "Technology Consultants",
       description:
-        "Leverage our Technology Consultants to drive digital innovation and align your IT roadmap with business objectives.",
-      path: "/technology",
+        "Leverage our Technology Consultants to drive digital innovation and align your IT Roadmap with business objectives.",
+      path: "/TechnologyConsultants",
     },
     {
       title: "Financial Consultants",
       description:
         "Our Financial Consultants bring expertise in structuring deals, managing risk, and driving profitability.",
-      path: "/finance",
+      path: "/FinancialConsultants",
     },
   ];
   const consultants = [
@@ -143,8 +144,7 @@ export default function ManagementConsultants() {
               transition={{ duration: 0.6 }}
               className="text-5xl font-bold text-white leading-tight"
             >
-              Access the <span className="text-cyan-400">Top 5%</span> of <br />
-              Management Consultants
+              We Don’t Just Consult — We Build Success Stories
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -152,9 +152,11 @@ export default function ManagementConsultants() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-white mt-6 text-lg"
             >
-              Sardius IT Technologies connects you with top-tier management
-              consultants to solve your most pressing business challenges with
-              precision and innovation.
+              At Sardius IT Technologies, From business strategy to operational
+              efficiency, our experts analyze, plan, and execute solutions that
+              drive real growth. With deep industry knowledge and a
+              results-driven mindset, they turn complex challenges into clear
+              opportunities helping your business scale smartly and sustainably
             </motion.p>
             <motion.div
               initial={{ scale: 0 }}
@@ -237,55 +239,55 @@ export default function ManagementConsultants() {
       </div>
 
       {/* Steps */}
-        <section className="min-h-screen flex flex-col items-center justify-center p-6 ">
-            <h1 className="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
-              How to Hire  Management Consultants Through Sardius
-            </h1>
-    
-            <div className="relative flex flex-col md:flex-row items-center justify-center gap-24 md:gap-48 w-full max-w-7xl">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  whileHover={{ scale: 1.05 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.3, duration: 0.6 }}
-                  className="flex flex-col items-center text-center relative  px-6 py-8 rounded-xl shadow-md md:hover:shadow-xl transition"
-                >
-                  {index !== 0 && (
-                    <div className="absolute -left-48 top-16 transform -translate-y-1/2 h-px bg-blue-500 w-40 hidden md:block">
-                      <div className="absolute -right-3 top-1/2 transform -translate-y-1/2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="2"
-                          stroke="#3B82F6"
-                          className="w-6 h-6"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 4l6 8-6 8"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  )}
-                  <div className="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center text-2xl text-blue-600 font-bold">
-                    {step.number}
+      <section className="min-h-screen flex flex-col items-center justify-center p-6 ">
+        <h1 className="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
+          How to Hire Management Consultants Through Sardius
+        </h1>
+
+        <div className="relative flex flex-col md:flex-row items-center justify-center gap-24 md:gap-48 w-full max-w-7xl">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.3, duration: 0.6 }}
+              className="flex flex-col items-center text-center relative  px-6 py-8 rounded-xl shadow-md md:hover:shadow-xl transition"
+            >
+              {index !== 0 && (
+                <div className="absolute -left-48 top-16 transform -translate-y-1/2 h-px bg-blue-500 w-40 hidden md:block">
+                  <div className="absolute -right-3 top-1/2 transform -translate-y-1/2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="#3B82F6"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4l6 8-6 8"
+                      />
+                    </svg>
                   </div>
-                  <h3 className="mt-8 font-bold text-white text-center">
-                    {step.title}
-                  </h3>
-                  <p className="mt-6 text-sm max-w-xs text-gray-300">
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </section>
+                </div>
+              )}
+              <div className="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center text-2xl text-blue-600 font-bold">
+                {step.number}
+              </div>
+              <h3 className="mt-8 font-bold text-white text-center">
+                {step.title}
+              </h3>
+              <p className="mt-6 text-sm max-w-xs text-gray-300">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
       {/* Skills */}
       <section className="min-h-screen py-12 px-6 bg-gray-950">
@@ -347,64 +349,14 @@ export default function ManagementConsultants() {
 
       {/* our team*/}
 
-      <motion.section
-        className="mb-16 p-4"
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-      >
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-12 transition-opacity duration-1000 ">
-          Meet Sardius Management Consultants
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              name: "Mani ",
-              role: "Management Consultants",
-              quote: " Paid Ads (Google Ads, Meta Ads)",
-              image: image2,
-            },
-            {
-              name: "Vivek ",
-              role: "Management Consultants",
-              quote: "SEO – Search Engine Optimization",
-              image: image1,
-            },
-            {
-              name: "Charan",
-              role: "Management Consultants",
-              quote: "Social Media Marketing",
-              image: image4,
-            },
-          ].map((member, i) => (
-            <div key={i} className="relative w-full h-64 perspective">
-              <motion.div
-                whileHover={{ rotateY: 180 }}
-                transition={{ duration: 0.8 }}
-                className="relative w-full h-full transform-style-preserve-3d"
-              >
-                {/* Front Face */}
-                <div className="absolute w-full h-full backface-hidden bg-gray-800 text-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-center items-center">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-20 h-20 rounded-full object-cover mb-4 border-2 border-white"
-                  />
-                  <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="text-gray-400 mt-2">{member.role}</p>
-                </div>
-
-                {/* Back Face */}
-                <div className="absolute w-full h-full backface-hidden bg-blue-600 text-white p-6 rounded-xl shadow-xl text-center flex flex-col justify-center items-center transform rotate-y-180">
-                  <p className="text-lg italic">“{member.quote}”</p>
-                  <p className="mt-4 font-semibold">– {member.name}</p>
-                </div>
-              </motion.div>
-            </div>
-          ))}
-        </div>
-      </motion.section>
+      
+      <section className="p-4">
+        <ScrollToTopButton />
+      </section>
+      <div>
+        {/* your page content */}
+        <ContactUsButton />
+      </div>
     </>
   );
 }

@@ -5,8 +5,10 @@ import TrustedBrands from "../pages/Trustedbrands";
 import TeamCategories from "./Team/Teamcategories";
 import { Link } from "react-router-dom";
 import Demand from "./Team/Demand";
-import Whychoosetoptal from "../pages/Team/Whychoosetoptal"
-import Clientsatisfaction from"../pages/Team/Clientsatisfaction"
+import Whychoosetoptal from "../pages/Team/Whychoosetoptal";
+import Clientsatisfaction from "../pages/Team/Clientsatisfaction";
+import ContactUsButton from "../pages/Contactusbutton";
+import ScrollToTopButton from "../pages/Toparrow";
 export default function Portfolio() {
   const steps = [
     {
@@ -54,24 +56,27 @@ export default function Portfolio() {
         >
           <div>
             <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-              Hire the <span className="text-blue-400">Top 3%</span> of <br /> Employees Talent<sup>®</sup>
+              Where <span className="text-blue-400">Top Talent</span> Meets{" "}
+              <br /> Top Performance<sup>®</sup>
             </h1>
             <p className="text-white mt-6 text-lg">
-              Software developers, designers, marketing <br /> experts,
-              management consultants, product managers, <br /> and project managers in the world.
+              Our employees are handpicked for their expertise, innovation,  <br /> and
+              passion for excellence. With a strong commitment to  <br /> continuous
+              learning and client success, they consistently  <br />deliver 
+              high-quality results that exceed expectations.
             </p>
             <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            <Link
-              to="/HireOptions"
-              className="mt-8 inline-block bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-md transition"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
             >
-            Recruit Top IT Talent
-            </Link>
-          </motion.div>
+              <Link
+                to="/HireOptions"
+                className="mt-8 inline-block bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white font-semibold py-3 px-8 rounded-md transition"
+              >
+                Recruit Top IT Talent
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>
@@ -87,8 +92,6 @@ export default function Portfolio() {
         <TrustedBrands />
       </motion.section>
 
-     
-
       {/* Team Categories Cards with animation */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -99,80 +102,81 @@ export default function Portfolio() {
       >
         <TeamCategories />
       </motion.section>
-         {/* Team Categories Cards with animation */}
-         <motion.section
-         initial={{ opacity: 0 }}
-         whileInView={{ opacity: 1 }}
-         viewport={{ once: true }}
-         transition={{ duration: 1 }}
-         className="py-12"
-       >
-         <Demand/> 
-       </motion.section>
-           {/* Steps Section */}
-             <section className="min-h-screen flex flex-col items-center justify-center p-6">
-               <h1 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-               Hiring Made Easy
-               </h1>
-       
-               <div className="relative flex flex-col md:flex-row items-center justify-center gap-24 md:gap-48 w-full max-w-7xl">
-                 {steps.map((step, index) => (
-                   <motion.div
-                     key={index}
-                     initial={{ scale: 0 }}
-                     whileInView={{ scale: 1 }}
-                     viewport={{ once: true }}
-                     transition={{ delay: index * 0.3, duration: 0.6 }}
-                     className="flex flex-col items-center text-center relative"
-                   >
-                     {/* Line with arrow */}
-                     {index !== 0 && (
-                       <div className="absolute left-[-180px] top-10 transform -translate-y-1/2 h-px bg-blue-500 w-40 hidden md:block">
-                         <div className="absolute -right-3 top-1/2 transform -translate-y-1/2">
-                           <svg
-                             xmlns="http://www.w3.org/2000/svg"
-                             fill="none"
-                             viewBox="0 0 24 24"
-                             strokeWidth="2"
-                             stroke="#3B82F6"
-                             className="w-6 h-6"
-                           >
-                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4l6 8-6 8" />
-                           </svg>
-                         </div>
-                       </div>
-                     )}
-                     {/* Step Number */}
-                     <div className="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center text-2xl text-blue-600 font-bold">
-                       {step.number}
-                     </div>
-                     {/* Step Text */}
-                     <h3 className="mt-8 font-bold">{step.title}</h3>
-                     <p className="mt-6 text-sm max-w-xs">{step.description}</p>
-                   </motion.div>
-                 ))}
-               </div>
-             </section>
-                {/* Team Categories Cards with animation */}
+    
+      {/* Steps Section */}
+      <section className="min-h-screen flex flex-col items-center justify-center p-6">
+        <h1 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+          Hiring Made Easy
+        </h1>
+
+        <div className="relative flex flex-col md:flex-row items-center justify-center gap-24 md:gap-48 w-full max-w-7xl">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.3, duration: 0.6 }}
+              className="flex flex-col items-center text-center relative"
+            >
+              {/* Line with arrow */}
+              {index !== 0 && (
+                <div className="absolute left-[-180px] top-10 transform -translate-y-1/2 h-px bg-blue-500 w-40 hidden md:block">
+                  <div className="absolute -right-3 top-1/2 transform -translate-y-1/2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="#3B82F6"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 4l6 8-6 8"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              )}
+              {/* Step Number */}
+              <div className="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center text-2xl text-blue-600 font-bold">
+                {step.number}
+              </div>
+              {/* Step Text */}
+              <h3 className="mt-8 font-bold">{step.title}</h3>
+              <p className="mt-6 text-sm max-w-xs">{step.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+      {/* Team Categories Cards with animation */}
       <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-      className="py-12"
-    >
-     <Whychoosetoptal/>
-    </motion.section>
-    <motion.section
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 1 }}
-    className="py-12"
-  >
-   <Clientsatisfaction/>
-  </motion.section>
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="py-12"
+      >
+        <Whychoosetoptal />
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="py-12"
+      >
+        <Clientsatisfaction />
+      </motion.section>
+      <section className="p-4">
+        <ScrollToTopButton />
+      </section>
+      <div>
+        {/* your page content */}
+        <ContactUsButton />
+      </div>
     </>
   );
 }
-
