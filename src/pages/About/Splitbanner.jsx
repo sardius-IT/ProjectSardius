@@ -125,7 +125,7 @@ const SplitBanner = () => {
               transition={{ duration: 0.6 }}
               className="text-3xl md:text-6xl font-bold mb-2"
             >
-              Our Client
+              Our Clients
             </motion.h2>
 
             <motion.h3
