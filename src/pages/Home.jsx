@@ -19,7 +19,7 @@ const slides = [
     video: video3,
   },
   {
-    title: "Accelerate with Sardius IT",
+    title: "Accelerate with Sardius ",
     subtitle: "We Grow Your Business",
     video: video4,
   },
