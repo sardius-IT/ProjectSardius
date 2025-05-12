@@ -50,6 +50,7 @@ import FinancialConsultants from "./pages/Rolerate/FinancialConsultants";
 import TechnicalProductManagers from "./pages/Rolerate/TechnicalProductManagers";
 import GrowthProductManagers from "./pages/Rolerate/GrowthProductManagers"
 import JobForm from "./pages/Careers/JobForm";
+import ErrorBoundary from "./pages/Careers/ErrorBoundary";
 function App() {
   const [showBanner, setShowBanner] = useState(true);
 
@@ -82,7 +83,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/admin-login" element={<AdminLogin />} />
-          <Route path="/apply" element={<JobForm/>} />
           <Route
             path="/admin"
             element={
@@ -91,6 +91,15 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+          path="/apply"
+          element={
+            <ErrorBoundary>
+              <JobForm/>
+            </ErrorBoundary>
+          }
+        />
+      
           <Route path="/developer" element={<Developer />} />
           <Route path="/Cloud" element={<Cloud />} />
           <Route path="/ScrollToTopButton" element={<ScrollToTopButton />} />
