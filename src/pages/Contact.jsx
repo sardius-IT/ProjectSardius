@@ -1,167 +1,97 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import ConnectPage from ".././pages/Cards/ConnectPage";
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-  });
+  const form = useRef();
   const [status, setStatus] = useState('');
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('Sending...');
 
-    try {
-      const response = await fetch('http://localhost:8081/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    emailjs
+      .sendForm(
+        'service_5bardgk',       // ✅ Your EmailJS Service ID
+        'template_5uu3mym',      // ✅ Your EmailJS Template ID
+        form.current,
+        'UOogBBctFuQoWc7s-'      // ✅ Your EmailJS Public Key (User ID)
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus('✅ Message sent successfully!');
+          form.current.reset();
         },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {    
-        setStatus('✅ Message sent successfully!');
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      } else {
-        setStatus('❌ Failed to send message. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error while sending message:', error);
-      setStatus('❌ Something went wrong. Please check your connection.');
-    }
+        (error) => {
+          console.error(error.text);
+          setStatus('❌ Failed to send message. Please try again.');
+        }
+      );
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from from-black via-black to-bg-black text-white">
-
-      {/* Top Heading Section */}
-      <div className="bg-gradient-to-r from-gray-500 via-black-500 to-black-500 p-16 text-center shadow-xl">
-        <motion.h1
-          className="text-5xl font-bold tracking-wide"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Contact Us
-        </motion.h1>
-        <p className="mt-4 text-lg text-white/80">We are here to help you grow and succeed!</p>
-      </div>
-
-      {/* Contact Section */}
-      <div className="flex flex-col md:flex-row p-10 gap-10">
-        {/* Left Side - Office Info + Map */}
-      
-
-        {/* Right - Contact Form */}
-        <motion.div 
-          className="md:w-1/2 bg-white text-gray-800 rounded-3xl shadow-2xl p-8"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-3xl font-bold mb-6 text-center">Get In Touch</h1>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              required
-              value={formData.subject}
-              onChange={handleChange}
-              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              required
-              rows="4"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
-            ></textarea>
-            <button
-              type="submit"
-              className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-md hover:scale-105 transition-transform"
-            >
-              Send Message
-            </button>
-          </form>
-          {status && (
-            <p className={`text-center mt-4 text-sm font-medium ${status.startsWith('✅') ? 'text-green-600' : 'text-red-500'}`}>
-              {status}
-            </p>
-          )}
-        </motion.div>
-      </div>
-      <section>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }} // 👈 start hidden and below
-          animate={{ opacity: 1, y: 0 }} // 👈 fade in and slide up
-          transition={{ duration: 0.8, ease: "easeOut" }} // 👈 smooth timing
-        >
-          <ConnectPage />
-        </motion.div>
-      </section>
-
-
-      {/* Social Media Footer */}
-      <motion.div
-        className="bg-black bg-opacity-30 py-6 text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-6">
+      <form
+        ref={form}
+        onSubmit={handleSubmit}
+        className="w-full max-w-xl bg-white text-gray-800 p-8 rounded-xl shadow-lg"
       >
-        <h2 className="text-xl font-semibold mb-2">Follow Us</h2>
-        <div className="flex justify-center gap-6 text-2xl">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
-            <FaFacebookF />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">
-            <FaInstagram />
-          </a>
-          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
-            <FaWhatsapp />
-          </a>
-        </div>
-      </motion.div>
+        <h2 className="text-3xl font-bold mb-6 text-center">Contact Us</h2>
 
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Full Name"
+          required
+          className="w-full p-3 mb-4 border border-gray-300 rounded"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          className="w-full p-3 mb-4 border border-gray-300 rounded"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          className="w-full p-3 mb-4 border border-gray-300 rounded"
+        />
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          required
+          className="w-full p-3 mb-4 border border-gray-300 rounded"
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          rows="5"
+          className="w-full p-3 mb-4 border border-gray-300 rounded resize-none"
+        ></textarea>
+
+        <button
+          type="submit"
+          className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-3 rounded hover:scale-105 transition"
+        >
+          Send Message
+        </button>
+
+        {status && (
+          <p
+            className={`text-center mt-4 font-medium ${
+              status.startsWith('✅') ? 'text-green-600' : 'text-red-500'
+            }`}
+          >
+            {status}
+          </p>
+        )}
+      </form>
     </div>
   );
 };
+
 export default ContactForm;
