@@ -8,7 +8,7 @@ import life3 from '../../assets/life3.jpeg';
 import life4 from '../../assets/life4.jpg';
 import life5 from '../../assets/life5.jpeg';
 import life6 from '../../assets/life6.jpeg';
-import ContactUsButton from "../../pages/Contactusbutton";
+
 import ScrollToTopButton from "../../pages/Toparrow";
 
 // Animations
@@ -174,9 +174,7 @@ const Careers = () => {
       <section className="p-4">
         <ScrollToTopButton />
       </section>
-      <div>
-        <ContactUsButton />
-      </div>
+      
     </div>
   );
 };

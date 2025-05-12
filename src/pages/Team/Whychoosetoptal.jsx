@@ -1,35 +1,35 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
-import Image2 from "../../assets/UntitledDesign.png";
-import cloudImage from "../../assets/modern.avif";
-import clouds from "../../assets/business.avif";
-import cloud from "../../assets/resource.avif";
-import image from "../../assets/friends.webp";
-import image1 from "../../assets/mulitile AI.webp";
+import Image2 from "../../assets/irst.gif";
+import cloudImage from "../../assets/y.png";
+import clouds from "../../assets/Mouli Logo.png";
+import cloud from "../../assets/vgrow.png";
+import image from "../../assets/Vani Narne.png";
+import image1 from "../../assets/JU.png";
 const cards = [
   {
-    title: "Precision Drilling",
+    title: "Careers Navigators",
     image: cloudImage,
   },
   {
-    title: "Bridgestone",
+    title: "IRST",
     image: Image2,
   },
   {
-    title: "Cleveland Cavaliers",
+    title: "Mouli",
     image: clouds,
   },
   {
-    title: "Zoetis",
+    title: "V Grow",
     image: cloud,
   },
   {
-    title: "CSR",
+    title: "Vani Narne",
     image: image,
   },
   {
-    title: "USC University of Southern California",
+    title: "JPR",
     image: image1,
   },
 ];
@@ -49,7 +49,7 @@ const WhyChooseToptal = () => {
               <img
                 src={card.image}
                 alt={card.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="absolute bottom-4 left-4 bg-black bg-opacity-60 text-white rounded-full px-4 py-2 flex items-center text-sm gap-2">

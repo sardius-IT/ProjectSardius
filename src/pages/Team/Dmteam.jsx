@@ -6,7 +6,7 @@ import image2 from "../../assets/employee/Bhavani.jpg";
 import Img3 from "../../assets/employee/MANASA.jpg";
 import TrustedBrands from "../../pages/Trustedbrands";
 import Job from "../../pages/Contact";
-import ContactUsButton from "../../pages/Contactusbutton";
+
 import ScrollToTopButton from "../../pages/Toparrow";
 
 export default function DigitalMarketingTeam() {
@@ -323,10 +323,7 @@ export default function DigitalMarketingTeam() {
       <section className="p-4">
         <ScrollToTopButton />
       </section>
-      <div>
-        {/* your page content */}
-        <ContactUsButton />
-      </div>
+     
     </>
   );
 }

@@ -1,7 +1,8 @@
 import { FaStar } from "react-icons/fa";
-import cloudImage from "../../assets/modern.avif";
-import Illustration from "../../assets/resource.avif";
-import clouds from "../../assets/UntitledDesign.png";
+import cloudImage from "../../assets/irst.gif";
+import Illustration from "../../assets/vgrow.png";
+import clouds from "../../assets/Vani Narne.png";
+import c from "../../assets/Sardius.Logo22.png";
 import clou from "../../assets/World-Earth-PNG-Photos.png";
 
 const testimonials = [
@@ -48,7 +49,7 @@ export default function ClientSatisfaction() {
             <p className="text-gray-200">Countries Served</p>
           </div>
           <div className="flex flex-col items-center">
-            <img src={clouds} alt="Clients" className="w-12 h-12 object-contain" />
+            <img src={c} alt="Clients" className="w-12 h-12 object-contain" />
             <h3 className="mt-2 text-2xl font-semibold">5,000+</h3>
             <p className="text-gray-200">Clients Served</p>
           </div>

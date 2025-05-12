@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import StrategySection from "../pages/About/StrategySection";
 import StatsSection from "../pages/About/StatsSection";
 import TrustedBrands from "../pages/Trustedbrands";
-import ContactUsButton from "../pages/Contactusbutton";
+
 import ScrollToTopButton from "../pages/Toparrow";
 
 const About = () => {
@@ -188,9 +188,7 @@ const About = () => {
         <ScrollToTopButton />
       </section>
 
-      <div className="px-4 py-8">
-        <ContactUsButton />
-      </div>
+    
     </div>
   );
 };
