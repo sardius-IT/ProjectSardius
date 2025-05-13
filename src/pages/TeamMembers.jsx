@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import image from "../assets/employee/Priya.jpg";
-import image1 from "../assets/abstract.avif";
-import image4 from "../assets/friends.webp";
+import Renuka from "../assets/employee/renuka.jpg";
 import Vivek from "../assets/employee/vivek.jpg";
 import Shreya from "../assets/employee/Shreya.A.jpg";
 import Charan from "../assets/employee/Chran Vakiti.jpg";
@@ -19,8 +18,8 @@ import MANASA from "../assets/employee/MANASA.jpg";
 import pavani from "../assets/employee/pavani.jpg";
 import Divya from "../assets/employee/divya.jpg";
 import Anitha from "../assets/employee/Anitha.jpg";
-import Lovathalli from"../assets/employee/Lovathalli.jpg"
-
+import Lovathalli from"../assets/employee/Lovathalli.jpg";
+import Aishwarya from"../assets/employee/Aishwarya.jpg";
 const teamData = [
   { name: "Shreya.A", title: "HR Associate", image: Shreya },
   { name: "Shravani.M", title: "Accounts Executive", image: Shravani },
@@ -37,9 +36,11 @@ const teamData = [
   { name: "Bhavani.G", title: "Digital Marketing Executive", image: Bhavani },
   { name: "MANASA.P", title: "Digital Marketing Executive", image: MANASA },
   { name: "Rajinikanth.K", title: "Staffing", image: rajinikanth },
-  { name: "Yamini Renuka.S", title: "Staffing", image: image1 },
+  { name: "Yamini Renuka.S", title: "Staffing", image: Renuka },
   { name: "Kalyani.M", title: "Staffing", image: Kalyani },
   { name: "Lovathalli", title: "Staffing", image:Lovathalli  },
+  { name: "Perumandla Aishwarya", title: "Staffing", image:Aishwarya  },
+
 ];
 
 const cardVariants = {
@@ -74,7 +75,7 @@ const TeamMembers = () => {
           src={image}
           alt="Director"
           loading="lazy"
-          className="rounded-3xl mx-auto w-full max-w-sm object-cover shadow-xl"
+          className="rounded-3xl mx-auto w-full max-w-sm object-cover shadow-xl hover:shadow-orange-300"
         />
       </div>
       <div className="md:w-1/2 py-5">
