@@ -51,6 +51,7 @@ import TechnicalProductManagers from "./pages/Rolerate/TechnicalProductManagers"
 import GrowthProductManagers from "./pages/Rolerate/GrowthProductManagers"
 import JobForm from "./pages/Careers/JobForm";
 import ErrorBoundary from "./pages/Careers/ErrorBoundary";
+import Scroll from './components/layout/Scroll';
 function App() {
   const [showBanner, setShowBanner] = useState(true);
 
@@ -67,7 +68,7 @@ function App() {
     <>
       {/* Top navigation */}
       <Navbar />
-
+      <Scroll/>
       {/* Global Cookie Consent Banner with slide-in animation */}
       {showBanner && !cookiesAccepted && (
         <CookieBanner onAccept={handleAcceptCookies} />
@@ -76,6 +77,7 @@ function App() {
       {/* Page content */}
       <main className="pt-24 bg-gray-950 text-white flex flex-col">
         <Routes>
+        
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
