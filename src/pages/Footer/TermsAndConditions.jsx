@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import termsBanner from '../../assets/friends.webp'; // Make sure the image is in src/assets/
+import termsBanner from '../../assets/staffing1.avif'; // Make sure the image is in src/assets/
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
