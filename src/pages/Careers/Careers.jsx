@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FaCheckCircle } from 'react-icons/fa';
 import life1 from '../../assets/life7.jpg';
-import life2 from '../../assets/life2.jpeg';
-import life3 from '../../assets/life3.jpeg';
+import life2 from '../../assets/our employee.jpg';
+import life3 from '../../assets/birda.jpg';
 import life4 from '../../assets/life4.jpg';
 import life5 from '../../assets/life5.jpeg';
 import life6 from '../../assets/life6.jpeg';
@@ -129,7 +129,7 @@ const Careers = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { src: life1, caption: 'Team Building Activities' },
-            { src: life2, caption: 'Fun Fridays at Work' },
+            { src: life2, caption: 'Our Team'},
             { src: life3, caption: 'Birthday Celebrations' },
             { src: life4, caption: 'Creative Workspace Vibes' },
             { src: life5, caption: 'Annual Company Retreat' },
