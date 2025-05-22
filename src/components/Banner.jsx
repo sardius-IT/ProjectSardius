@@ -25,7 +25,7 @@ const CookieBanner = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-sm md:text-base">
           <p className="mb-1">
-            Microsoft Edge is moving towards a new experience that allows users to browse without third-party cookies.
+            Microsoft Edge is moving towards a new experience that allows a users to browse without third-party cookies.
           </p>
           <p className="text-gray-300">
             We use cookies to improve your browsing experience. By continuing, you agree to our cookie policy.
