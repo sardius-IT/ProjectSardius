@@ -42,7 +42,7 @@ export default function ClientSatisfaction() {
         <div className="border-t border-gray-200 my-10"></div>
 
         {/* Stats Section */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-10">
+        {/* <div className="flex flex-col sm:flex-row justify-center items-center gap-10">
           <div className="flex flex-col items-center">
             <img src={clou} alt="Globe" className="w-12 h-12 object-contain" />
             <h3 className="mt-2 text-2xl font-semibold">50+</h3>
@@ -53,7 +53,7 @@ export default function ClientSatisfaction() {
             <h3 className="mt-2 text-2xl font-semibold">5,000+</h3>
             <p className="text-gray-200">Clients Served</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Star Rating Section */}
         <div className="flex flex-wrap justify-center items-center gap-2 mt-8 text-sm sm:text-base text-center">
