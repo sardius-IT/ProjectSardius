@@ -28,7 +28,7 @@ const Footer = () => {
           <h3 className="font-semibold mb-4">Company</h3>
           <ul className="space-y-2 text-gray-300 text-sm">
             <li><Link to="/about">About Sardius</Link></li>
-            <li><Link to="/about">Our Vision</Link></li>
+            <li><Link to="/sectors">Our Vision</Link></li>
             <li><Link to="/TeamMembers">Our Team</Link></li>
             <li><Link to="/portfolio">Portfolio</Link></li>
             <li><Link to="/admin-login">Admin Login</Link></li>

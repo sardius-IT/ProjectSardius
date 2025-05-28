@@ -155,7 +155,7 @@ export default function Portfolio() {
       >
         <Whychoosetoptal />
       </motion.section>
-      <motion.section
+      {/* <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -163,7 +163,7 @@ export default function Portfolio() {
         className="py-12 px-4 sm:px-8 lg:px-16"
       >
         <Clientsatisfaction />
-      </motion.section>
+      </motion.section> */}
 
       {/* Footer Buttons */}
       <section className="py-8 px-4 sm:px-8 lg:px-16 space-y-4 flex flex-col sm:flex-row items-center justify-between">

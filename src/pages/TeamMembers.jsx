@@ -23,22 +23,22 @@ import Aishwarya from"../assets/employee/Aishwarya.jpg";
 const teamData = [
   { name: "Shreya.A", title: "HR Associate", image: Shreya },
   { name: "Shravani.M", title: "Accounts Executive", image: Shravani },
-  { name: "Shilpa.k", title: "IT Recruitment", image: Shilpa },
+  
   { name: "Vivek.K", title: "Frontend Developer", image: Vivek },
   { name: "Manisha.P", title: "Frontend Developer", image: Manisha },
   { name: "Mani.k", title: "Backend Developer", image: Mani },
   { name: "Sai Meghana.k", title: "Backend Developer", image: Meghana },
   { name: "Geetha.B", title: "DevOps Engineer", image: Geetha },
-  { name: "Anitha.N", title: "DevOps Engineer", image: Anitha },
+  
   { name: "Divya Madhuri.K", title: "QA Engineer", image: Divya },
   { name: "Pavani Konduri", title: "QA Engineer", image: pavani },
   { name: "Charan Vakiti", title: "Digital Marketing Specialist", image: Charan },
-  { name: "Bhavani.G", title: "Digital Marketing Executive", image: Bhavani },
+ 
   { name: "MANASA.P", title: "Digital Marketing Executive", image: MANASA },
   { name: "Rajinikanth.K", title: "Staffing", image: rajinikanth },
   { name: "Yamini Renuka.S", title: "Staffing", image: Renuka },
-  { name: "Kalyani.M", title: "Staffing", image: Kalyani },
-  { name: "Lovathalli", title: "Staffing", image:Lovathalli  },
+  
+  
   { name: "Perumandla Aishwarya", title: "Staffing", image:Aishwarya  },
 
 ];
@@ -59,37 +59,9 @@ const cardVariants = {
 const TeamMembers = () => {
   return (
     <>
-    <h1 className="text-4xl md:text-5xl text-center font-bold py-6 text-white">
-      About Our Director
-    </h1>
+    
 
-    {/* Director Section */}
-    <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      className="flex flex-col md:flex-row items-center gap-8 px-6 py-10 text-white max-w-7xl mx-auto"
-    >
-      <div className="w-full md:w-1/2">
-        <img
-          src={image}
-          alt="Director"
-          loading="lazy"
-          className="rounded-3xl mx-auto w-full max-w-sm object-cover shadow-xl hover:shadow-orange-300"
-        />
-      </div>
-      <div className="md:w-1/2 py-5">
-        <h2 className="text-2xl font-bold text-white py-2">
-          <span className="italic">Ms</span>. Priyadarshini Talluri
-        </h2>
-        <p className="text-sm text-gray-400 mb-2">
-          Founder & Director, Sardius IT Company
-        </p>
-        <p className="text-gray-300 leading-relaxed py-4">
-          Ms. Priyadarshini Talluri, the Founder and Director of Sardius IT Company, is a dynamic and forward-thinking leader with a strong passion for technology and innovation. With a clear vision to bridge the gap between digital challenges and transformative solutions, she established Sardius IT as a trusted provider of cutting-edge IT services.
-        </p>
-      </div>
-    </motion.section>
+    
 
     {/* Team Members Section */}
     <section className="py-12 px-6 text-white">
