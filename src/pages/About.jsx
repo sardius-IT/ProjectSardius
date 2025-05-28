@@ -77,7 +77,7 @@ const About = () => {
           <p className="text-xl leading-relaxed">
             We are Sardius IT Technologies, a forward-thinking IT solutions company dedicated to helping businesses thrive in the digital age. We are a team of passionate professionals delivering high-quality services in software development, IT staffing, digital marketing, and cloud technologies.
             <div className="py-3">Driven by Innovation, Powered by People, Proven by Results</div>
-            <StatsSection />
+           {/* <StatsSection />  */} 
             <strong>Headquartered in Hyderabad, India with International reach.</strong>
           </p>
         </div>

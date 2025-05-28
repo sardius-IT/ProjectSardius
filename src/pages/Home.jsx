@@ -149,7 +149,7 @@ const Home = () => {
         <Splitbanner />
       </motion.section>
 
-      {/* Stats */}
+      {/* Stats 
       <motion.section
         initial={{ opacity: 0, y: 50, scale: 0.95 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -158,7 +158,7 @@ const Home = () => {
         className="py-12 px-4 sm:px-8"
       >
         <StatsSection />
-      </motion.section>
+      </motion.section>*/}
 
       {/* Team */}
       <motion.section
