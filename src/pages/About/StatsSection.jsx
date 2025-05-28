@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 
 const stats = [
   {
-    number: 150,
+    number: 4,
     label: "Projects Completed",
     suffix: "+",
   },
