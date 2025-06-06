@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import image1 from "../../assets/employee/Chran Vakiti.jpg";
-import image2 from "../../assets/employee/Bhavani.jpg";
+import image2 from "../../assets/employee/MANASA.jpg";
 import Img3 from "../../assets/employee/MANASA.jpg";
 import TrustedBrands from "../../pages/Trustedbrands";
 import Job from "../../pages/Contact";
