@@ -176,7 +176,7 @@ const About = () => {
       <section className="w-full h-[400px] sm:h-[500px] md:h-screen overflow-hidden">
         <iframe
           title="Sardius IT Technologies Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2894533508255!2d78.3836257!3d17.4513199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91007a623423%3A0x6f759591de4fa10d!2sSardius%20IT%20Technology!5e0!3m2!1sen!2sin!4v1714997152005!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.106987461947!2d78.3893603153385!3d17.4884779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9100409b5edf%3A0xbd05be117ef89e5f!2sMouli%20Overseas%20%7C%20Best%20MBBS%20Consultancy%20in%20Hyderabad%20%7C%20MBBS%20in%20Abroad%20%7C%20Russia%20%7C%20Georgia%20%7C%20Uzbekistan!5e0!3m2!1sen!2sin!4v1724337012345!5m2!1sen!2sin"
           className="w-full h-full border-0"
           allowFullScreen=""
           loading="lazy"
